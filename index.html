@@ -704,54 +704,359 @@
         </section>
         <!-- Dynamic Schedule & Location Section End -->
 
-        <!-- Testimonials Section Start -->
-        <div class="cut-details section-bg section-padding2" data-background="assets/img/gallery/section_bg02.png">
+        <!-- Testimonials Section Start (3-Column Infinite Vertical Marquee) -->
+        <section id="testimonials" class="testimonials-area section-padding2 position-relative">
            <div class="container">
-                <div class="row justify-content-center mb-50">
-                    <div class="col-xl-7 text-center">
+                <!-- Section Header -->
+                <div class="row justify-content-center mb-40">
+                    <div class="col-xl-8 col-lg-9 text-center">
                         <div class="section-tittle">
-                            <span>Ulasan Pelanggan</span>
+                            <span class="testimonials-badge"><i class="fas fa-comment-dots mr-1"></i> Ulasan Pelanggan</span>
                             <h2>Kepuasan Pelanggan Andy Barbershop</h2>
+                            <p style="color: #94a3b8; font-size: 15px; margin-top: 12px;">Simak pengalaman nyata para pria di Kalinyamatan dan Jepara yang mempercayakan gaya rambut mereka bersama kami.</p>
                         </div>
                     </div>
                 </div>
-                <div class="cut-active dot-style">
-                    <div class="single-cut">
-                        <div class="cut-icon mb-20 text-center">
-                            <span style="color:#fbbf24; font-size: 24px;">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            </span>
+
+                <!-- Infinite Marquee Columns Container -->
+                <div class="testimonials-marquee-container">
+                    <div class="row">
+                        <!-- Column 1 (All Devices: Mobile, Tablet, Desktop) -->
+                        <div class="col-12 col-md-6 col-lg-4 mb-4 mb-md-0">
+                            <div class="testimonials-col-wrapper testimonials-col-1">
+                                <div class="testimonials-track">
+                                    <!-- Set 1 (Cards 1-3) -->
+                                    <div class="testimonial-card">
+                                        <div class="d-flex align-items-center justify-content-between mb-3">
+                                            <div class="testimonial-stars">
+                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="testimonial-badge"><i class="fab fa-google mr-1"></i> Google 5.0</span>
+                                        </div>
+                                        <p class="testimonial-text">"Tempat potong rambut favorit di Kalinyamatan. Hasil pangkasnya sangat presisi dan rapi, mas Andy paham banget model rambut yang cocok sama bentuk wajah. Bukanya sampai malam jadi pas banget buat yang pulang kerja."</p>
+                                        <div class="testimonial-author d-flex align-items-center mt-3">
+                                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Dimas Prasetyo" class="author-img">
+                                            <div class="author-meta ml-3">
+                                                <h6 class="author-name mb-0">Dimas Prasetyo</h6>
+                                                <span class="author-role">Warga Kalinyamatan • Pelanggan Tetap</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="testimonial-card">
+                                        <div class="d-flex align-items-center justify-content-between mb-3">
+                                            <div class="testimonial-stars">
+                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="testimonial-badge"><i class="fab fa-google mr-1"></i> Google 5.0</span>
+                                        </div>
+                                        <p class="testimonial-text">"Taper Fade-nya sangat rapi dan gradasinya halus tanpa garis patah. Tempatnya bersih, wangi, dan ber-AC dingin jadi betah banget selama proses potong."</p>
+                                        <div class="testimonial-author d-flex align-items-center mt-3">
+                                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=150&q=80" alt="Bayu Setiawan" class="author-img">
+                                            <div class="author-meta ml-3">
+                                                <h6 class="author-name mb-0">Bayu Setiawan</h6>
+                                                <span class="author-role">Penggemar Hairstyle • Jepara</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="testimonial-card">
+                                        <div class="d-flex align-items-center justify-content-between mb-3">
+                                            <div class="testimonial-stars">
+                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="testimonial-badge"><i class="fab fa-google mr-1"></i> Google 5.0</span>
+                                        </div>
+                                        <p class="testimonial-text">"Sabar banget waktu nyukur anak saya yang biasanya rewel. Mas Andy komunikatif dan hasilnya bikin si kecil keliatan keren dan rapi."</p>
+                                        <div class="testimonial-author d-flex align-items-center mt-3">
+                                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80" alt="Hendra Gunawan" class="author-img">
+                                            <div class="author-meta ml-3">
+                                                <h6 class="author-name mb-0">Hendra Gunawan</h6>
+                                                <span class="author-role">Warga Bakalan • Kalinyamatan</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Duplicate Set 1 for Infinite Scroll -->
+                                    <div class="testimonial-card" aria-hidden="true">
+                                        <div class="d-flex align-items-center justify-content-between mb-3">
+                                            <div class="testimonial-stars">
+                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="testimonial-badge"><i class="fab fa-google mr-1"></i> Google 5.0</span>
+                                        </div>
+                                        <p class="testimonial-text">"Tempat potong rambut favorit di Kalinyamatan. Hasil pangkasnya sangat presisi dan rapi, mas Andy paham banget model rambut yang cocok sama bentuk wajah. Bukanya sampai malam jadi pas banget buat yang pulang kerja."</p>
+                                        <div class="testimonial-author d-flex align-items-center mt-3">
+                                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Dimas Prasetyo" class="author-img">
+                                            <div class="author-meta ml-3">
+                                                <h6 class="author-name mb-0">Dimas Prasetyo</h6>
+                                                <span class="author-role">Warga Kalinyamatan • Pelanggan Tetap</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="testimonial-card" aria-hidden="true">
+                                        <div class="d-flex align-items-center justify-content-between mb-3">
+                                            <div class="testimonial-stars">
+                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="testimonial-badge"><i class="fab fa-google mr-1"></i> Google 5.0</span>
+                                        </div>
+                                        <p class="testimonial-text">"Taper Fade-nya sangat rapi dan gradasinya halus tanpa garis patah. Tempatnya bersih, wangi, dan ber-AC dingin jadi betah banget selama proses potong."</p>
+                                        <div class="testimonial-author d-flex align-items-center mt-3">
+                                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=150&q=80" alt="Bayu Setiawan" class="author-img">
+                                            <div class="author-meta ml-3">
+                                                <h6 class="author-name mb-0">Bayu Setiawan</h6>
+                                                <span class="author-role">Penggemar Hairstyle • Jepara</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="testimonial-card" aria-hidden="true">
+                                        <div class="d-flex align-items-center justify-content-between mb-3">
+                                            <div class="testimonial-stars">
+                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="testimonial-badge"><i class="fab fa-google mr-1"></i> Google 5.0</span>
+                                        </div>
+                                        <p class="testimonial-text">"Sabar banget waktu nyukur anak saya yang biasanya rewel. Mas Andy komunikatif dan hasilnya bikin si kecil keliatan keren dan rapi."</p>
+                                        <div class="testimonial-author d-flex align-items-center mt-3">
+                                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80" alt="Hendra Gunawan" class="author-img">
+                                            <div class="author-meta ml-3">
+                                                <h6 class="author-name mb-0">Hendra Gunawan</h6>
+                                                <span class="author-role">Warga Bakalan • Kalinyamatan</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="cut-descriptions text-center">
-                            <p>"Tempat potong rambut favorit di Kalinyamatan. Hasil pangkasnya sangat presisi dan rapi, mas Andy paham banget model rambut yang cocok sama bentuk wajah. Bukanya sampai malam jadi pas banget buat yang pulang kerja."</p>
-                            <span>Dimas Prasetyo (Ulasan Google Maps)</span>
+
+                        <!-- Column 2 (Tablet & Desktop: d-none d-md-block) -->
+                        <div class="col-12 col-md-6 col-lg-4 d-none d-md-block">
+                            <div class="testimonials-col-wrapper testimonials-col-2">
+                                <div class="testimonials-track">
+                                    <!-- Set 2 (Cards 4-6) -->
+                                    <div class="testimonial-card">
+                                        <div class="d-flex align-items-center justify-content-between mb-3">
+                                            <div class="testimonial-stars">
+                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="testimonial-badge"><i class="fab fa-google mr-1"></i> Google 5.0</span>
+                                        </div>
+                                        <p class="testimonial-text">"Minta model potongan Two Block dan hasilnya memuaskan banget! Harganya juga sangat terjangkau dibanding barbershop lain, tapi pelayanannya profesional dan ramah."</p>
+                                        <div class="testimonial-author d-flex align-items-center mt-3">
+                                            <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=150&q=80" alt="Rizky Maulana" class="author-img">
+                                            <div class="author-meta ml-3">
+                                                <h6 class="author-name mb-0">Rizky Maulana</h6>
+                                                <span class="author-role">Karyawan Swasta • Kalinyamatan</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="testimonial-card">
+                                        <div class="d-flex align-items-center justify-content-between mb-3">
+                                            <div class="testimonial-stars">
+                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="testimonial-badge"><i class="fab fa-google mr-1"></i> Google 5.0</span>
+                                        </div>
+                                        <p class="testimonial-text">"Fitur booking antrean lewat website/WhatsApp ngebantu banget! Tinggal datang sesuai jam slot tanpa buang waktu nunggu lama. Sangat modern dan profesional."</p>
+                                        <div class="testimonial-author d-flex align-items-center mt-3">
+                                            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&q=80" alt="Tri Wahyudi" class="author-img">
+                                            <div class="author-meta ml-3">
+                                                <h6 class="author-name mb-0">Tri Wahyudi</h6>
+                                                <span class="author-role">Komunitas Motor • Mayong</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="testimonial-card">
+                                        <div class="d-flex align-items-center justify-content-between mb-3">
+                                            <div class="testimonial-stars">
+                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="testimonial-badge"><i class="fab fa-google mr-1"></i> Google 5.0</span>
+                                        </div>
+                                        <p class="testimonial-text">"Rela jauh-jauh dari Mayong ke Kalinyamatan cuma buat cukur di Andy Barbershop. Pelayanan bintang lima, hasil potongan rapi presisi, harga tetap bersahabat!"</p>
+                                        <div class="testimonial-author d-flex align-items-center mt-3">
+                                            <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=150&q=80" alt="Doni Saputra" class="author-img">
+                                            <div class="author-meta ml-3">
+                                                <h6 class="author-name mb-0">Doni Saputra</h6>
+                                                <span class="author-role">Wiraswasta • Jepara</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Duplicate Set 2 for Infinite Scroll -->
+                                    <div class="testimonial-card" aria-hidden="true">
+                                        <div class="d-flex align-items-center justify-content-between mb-3">
+                                            <div class="testimonial-stars">
+                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="testimonial-badge"><i class="fab fa-google mr-1"></i> Google 5.0</span>
+                                        </div>
+                                        <p class="testimonial-text">"Minta model potongan Two Block dan hasilnya memuaskan banget! Harganya juga sangat terjangkau dibanding barbershop lain, tapi pelayanannya profesional dan ramah."</p>
+                                        <div class="testimonial-author d-flex align-items-center mt-3">
+                                            <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=150&q=80" alt="Rizky Maulana" class="author-img">
+                                            <div class="author-meta ml-3">
+                                                <h6 class="author-name mb-0">Rizky Maulana</h6>
+                                                <span class="author-role">Karyawan Swasta • Kalinyamatan</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="testimonial-card" aria-hidden="true">
+                                        <div class="d-flex align-items-center justify-content-between mb-3">
+                                            <div class="testimonial-stars">
+                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="testimonial-badge"><i class="fab fa-google mr-1"></i> Google 5.0</span>
+                                        </div>
+                                        <p class="testimonial-text">"Fitur booking antrean lewat website/WhatsApp ngebantu banget! Tinggal datang sesuai jam slot tanpa buang waktu nunggu lama. Sangat modern dan profesional."</p>
+                                        <div class="testimonial-author d-flex align-items-center mt-3">
+                                            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&q=80" alt="Tri Wahyudi" class="author-img">
+                                            <div class="author-meta ml-3">
+                                                <h6 class="author-name mb-0">Tri Wahyudi</h6>
+                                                <span class="author-role">Komunitas Motor • Mayong</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="testimonial-card" aria-hidden="true">
+                                        <div class="d-flex align-items-center justify-content-between mb-3">
+                                            <div class="testimonial-stars">
+                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="testimonial-badge"><i class="fab fa-google mr-1"></i> Google 5.0</span>
+                                        </div>
+                                        <p class="testimonial-text">"Rela jauh-jauh dari Mayong ke Kalinyamatan cuma buat cukur di Andy Barbershop. Pelayanan bintang lima, hasil potongan rapi presisi, harga tetap bersahabat!"</p>
+                                        <div class="testimonial-author d-flex align-items-center mt-3">
+                                            <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=150&q=80" alt="Doni Saputra" class="author-img">
+                                            <div class="author-meta ml-3">
+                                                <h6 class="author-name mb-0">Doni Saputra</h6>
+                                                <span class="author-role">Wiraswasta • Jepara</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="single-cut">
-                        <div class="cut-icon mb-20 text-center">
-                            <span style="color:#fbbf24; font-size: 24px;">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            </span>
-                        </div>
-                        <div class="cut-descriptions text-center">
-                            <p>"Minta model potongan Two Block dan hasilnya memuaskan banget! Harganya juga sangat terjangkau dibanding barbershop lain, tapi pelayanannya profesional dan ramah. Tempatnya bersih dan ber-AC."</p>
-                            <span>Rizky Maulana (Ulasan Google Maps)</span>
-                        </div>
-                    </div>
-                    <div class="single-cut">
-                        <div class="cut-icon mb-20 text-center">
-                            <span style="color:#fbbf24; font-size: 24px;">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            </span>
-                        </div>
-                        <div class="cut-descriptions text-center">
-                            <p>"Paket komplitnya mantap, ada pijat leher dan kepala yang bikin seger setelah seharian lelah. Sudah langganan di Andy Barbershop dan selalu puas!"</p>
-                            <span>Ahmad Faisal (Ulasan Google Maps)</span>
+
+                        <!-- Column 3 (Desktop Only: d-none d-lg-block) -->
+                        <div class="col-lg-4 d-none d-lg-block">
+                            <div class="testimonials-col-wrapper testimonials-col-3">
+                                <div class="testimonials-track">
+                                    <!-- Set 3 (Cards 7-9) -->
+                                    <div class="testimonial-card">
+                                        <div class="d-flex align-items-center justify-content-between mb-3">
+                                            <div class="testimonial-stars">
+                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="testimonial-badge"><i class="fab fa-google mr-1"></i> Google 5.0</span>
+                                        </div>
+                                        <p class="testimonial-text">"Paket komplitnya mantap, ada pijat leher dan kepala yang bikin seger setelah seharian lelah. Sudah langganan di Andy Barbershop dan selalu puas!"</p>
+                                        <div class="testimonial-author d-flex align-items-center mt-3">
+                                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80" alt="Ahmad Faisal" class="author-img">
+                                            <div class="author-meta ml-3">
+                                                <h6 class="author-name mb-0">Ahmad Faisal</h6>
+                                                <span class="author-role">Pengusaha Mebel • Jepara</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="testimonial-card">
+                                        <div class="d-flex align-items-center justify-content-between mb-3">
+                                            <div class="testimonial-stars">
+                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="testimonial-badge"><i class="fab fa-google mr-1"></i> Google 5.0</span>
+                                        </div>
+                                        <p class="testimonial-text">"Hair styling pomade dan potongannya konsisten bagus setiap kali datang. Mau acara formal atau santai selalu percayakan rambut ke mas Andy."</p>
+                                        <div class="testimonial-author d-flex align-items-center mt-3">
+                                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Gilang Pratama" class="author-img">
+                                            <div class="author-meta ml-3">
+                                                <h6 class="author-name mb-0">Gilang Pratama</h6>
+                                                <span class="author-role">Kreator Konten • Jepara</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="testimonial-card">
+                                        <div class="d-flex align-items-center justify-content-between mb-3">
+                                            <div class="testimonial-stars">
+                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="testimonial-badge"><i class="fab fa-google mr-1"></i> Google 5.0</span>
+                                        </div>
+                                        <p class="testimonial-text">"French Crop ter-rapi yang pernah saya coba. Mas Andy bener-bener teliti menyesuaikan tekstur rambut. Recommended banget buat anak muda!"</p>
+                                        <div class="testimonial-author d-flex align-items-center mt-3">
+                                            <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=150&q=80" alt="Kevin Adrian" class="author-img">
+                                            <div class="author-meta ml-3">
+                                                <h6 class="author-name mb-0">Kevin Adrian</h6>
+                                                <span class="author-role">Mahasiswa Desain • Kalinyamatan</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Duplicate Set 3 for Infinite Scroll -->
+                                    <div class="testimonial-card" aria-hidden="true">
+                                        <div class="d-flex align-items-center justify-content-between mb-3">
+                                            <div class="testimonial-stars">
+                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="testimonial-badge"><i class="fab fa-google mr-1"></i> Google 5.0</span>
+                                        </div>
+                                        <p class="testimonial-text">"Paket komplitnya mantap, ada pijat leher dan kepala yang bikin seger setelah seharian lelah. Sudah langganan di Andy Barbershop dan selalu puas!"</p>
+                                        <div class="testimonial-author d-flex align-items-center mt-3">
+                                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80" alt="Ahmad Faisal" class="author-img">
+                                            <div class="author-meta ml-3">
+                                                <h6 class="author-name mb-0">Ahmad Faisal</h6>
+                                                <span class="author-role">Pengusaha Mebel • Jepara</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="testimonial-card" aria-hidden="true">
+                                        <div class="d-flex align-items-center justify-content-between mb-3">
+                                            <div class="testimonial-stars">
+                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="testimonial-badge"><i class="fab fa-google mr-1"></i> Google 5.0</span>
+                                        </div>
+                                        <p class="testimonial-text">"Hair styling pomade dan potongannya konsisten bagus setiap kali datang. Mau acara formal atau santai selalu percayakan rambut ke mas Andy."</p>
+                                        <div class="testimonial-author d-flex align-items-center mt-3">
+                                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Gilang Pratama" class="author-img">
+                                            <div class="author-meta ml-3">
+                                                <h6 class="author-name mb-0">Gilang Pratama</h6>
+                                                <span class="author-role">Kreator Konten • Jepara</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="testimonial-card" aria-hidden="true">
+                                        <div class="d-flex align-items-center justify-content-between mb-3">
+                                            <div class="testimonial-stars">
+                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="testimonial-badge"><i class="fab fa-google mr-1"></i> Google 5.0</span>
+                                        </div>
+                                        <p class="testimonial-text">"French Crop ter-rapi yang pernah saya coba. Mas Andy bener-bener teliti menyesuaikan tekstur rambut. Recommended banget buat anak muda!"</p>
+                                        <div class="testimonial-author d-flex align-items-center mt-3">
+                                            <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=150&q=80" alt="Kevin Adrian" class="author-img">
+                                            <div class="author-meta ml-3">
+                                                <h6 class="author-name mb-0">Kevin Adrian</h6>
+                                                <span class="author-role">Mahasiswa Desain • Kalinyamatan</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
            </div>
-        </div>
+        </section>
         <!-- Testimonials Section End -->
     </main>
 
