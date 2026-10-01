@@ -1,0 +1,16 @@
+# Dependencies & Temp
+node_modules/
+scratch/
+.tempmediaStorage/
+*.log
+
+# OS generated
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# IDE & Editor
+.vscode/
+.idea/
+*.swp
+*.swo

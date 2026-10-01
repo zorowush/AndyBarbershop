@@ -1,0 +1,21 @@
+{
+  "name": "Andy Barbershop Jepara",
+  "short_name": "Andy Barbershop",
+  "description": "Website Resmi & Sistem Reservasi Andy Barbershop - Pangkas & Perawatan Rambut Pria di Kalinyamatan, Jepara.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0b0f19",
+  "theme_color": "#d4af37",
+  "icons": [
+    {
+      "src": "assets/img/logo/LogoBarbershop.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/logo/LogoBarbershop.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
