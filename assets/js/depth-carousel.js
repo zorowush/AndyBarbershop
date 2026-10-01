@@ -1,6 +1,6 @@
 /**
  * DepthCarousel - 3D Perspective Card Stack (React Bits Port for Vanilla JS)
- * Enhanced for Andy Barbershop with GSAP Tweening & Full Touch/Drag Interactivity
+ * Enhanced for Andy Barbershop with GSAP Tweening & Multi-Screen Responsiveness
  */
 
 (function (global) {
@@ -18,7 +18,7 @@
                 return;
             }
 
-            this.options = Object.assign({
+            this.baseOptions = Object.assign({
                 cardWidth: 320,
                 cardHeight: 440,
                 radius: 18,
@@ -29,8 +29,8 @@
                 tiltDirection: 'right',
                 perspective: 1400,
                 visibleCards: 4,
-                falloff: 0.2,
-                blur: 6,
+                falloff: 0.22,
+                blur: 5,
                 duration: 700,
                 ease: 'power3.out',
                 autoplay: true,
@@ -65,15 +65,138 @@
 
             this.reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+            // Dynamic responsive configuration
+            this.currentConfig = {};
+
             this.init();
         }
 
-        init() {
-            this.container.style.setProperty('--dc-perspective', `${this.options.perspective}px`);
+        getBreakpointConfig(viewportWidth) {
+            const w = viewportWidth || (this.container ? this.container.getBoundingClientRect().width : window.innerWidth) || window.innerWidth;
 
-            // Ensure cards have dimensions and tints
+            // Tier 1: Small Mobile (< 480px, e.g. 360px - 479px)
+            if (w < 480) {
+                const cardW = Math.min(260, Math.max(220, Math.round(w * 0.72)));
+                const cardH = Math.round(cardW * 1.44);
+                return {
+                    cardWidth: cardW,
+                    cardHeight: cardH,
+                    radius: 14,
+                    depth: 65,
+                    spread: 22,
+                    tilt: 9,
+                    perspective: 900,
+                    visibleCards: 2,
+                    stageOffsetX: -14,
+                    scale: 1.0,
+                    blur: 3,
+                    falloff: 0.28,
+                    containerHeight: cardH + 70
+                };
+            }
+
+            // Tier 2: Mobile Medium (480px - 575px)
+            if (w < 576) {
+                const cardW = Math.min(270, Math.round(w * 0.62));
+                const cardH = Math.round(cardW * 1.42);
+                return {
+                    cardWidth: cardW,
+                    cardHeight: cardH,
+                    radius: 16,
+                    depth: 85,
+                    spread: 32,
+                    tilt: 11,
+                    perspective: 1000,
+                    visibleCards: 2,
+                    stageOffsetX: -18,
+                    scale: 1.0,
+                    blur: 4,
+                    falloff: 0.26,
+                    containerHeight: cardH + 70
+                };
+            }
+
+            // Tier 3: Tablet Portrait / Phablet (576px - 767px)
+            if (w < 768) {
+                return {
+                    cardWidth: 260,
+                    cardHeight: 380,
+                    radius: 16,
+                    depth: 110,
+                    spread: 42,
+                    tilt: 14,
+                    perspective: 1100,
+                    visibleCards: 2,
+                    stageOffsetX: -22,
+                    scale: 1.0,
+                    blur: 4,
+                    falloff: 0.24,
+                    containerHeight: 460
+                };
+            }
+
+            // Tier 4: Tablet Landscape (768px - 991px)
+            if (w < 992) {
+                return {
+                    cardWidth: 270,
+                    cardHeight: 390,
+                    radius: 16,
+                    depth: 140,
+                    spread: 56,
+                    tilt: 16,
+                    perspective: 1200,
+                    visibleCards: 3,
+                    stageOffsetX: -20,
+                    scale: 1.0,
+                    blur: 5,
+                    falloff: 0.22,
+                    containerHeight: 470
+                };
+            }
+
+            // Tier 5: Laptop / Medium Desktop (992px - 1199px)
+            if (w < 1200) {
+                return {
+                    cardWidth: 290,
+                    cardHeight: 410,
+                    radius: 18,
+                    depth: 180,
+                    spread: 72,
+                    tilt: 19,
+                    perspective: 1300,
+                    visibleCards: 3,
+                    stageOffsetX: -10,
+                    scale: 1.0,
+                    blur: 5,
+                    falloff: 0.22,
+                    containerHeight: 490
+                };
+            }
+
+            // Tier 6: Large Desktop (>= 1200px)
+            return {
+                cardWidth: this.baseOptions.cardWidth || 320,
+                cardHeight: this.baseOptions.cardHeight || 440,
+                radius: this.baseOptions.radius || 18,
+                depth: this.baseOptions.depth || 220,
+                spread: this.baseOptions.spread || 90,
+                tilt: this.baseOptions.tilt || 22,
+                perspective: this.baseOptions.perspective || 1400,
+                visibleCards: this.baseOptions.visibleCards || 4,
+                stageOffsetX: 0,
+                scale: 1.0,
+                blur: this.baseOptions.blur || 5,
+                falloff: this.baseOptions.falloff || 0.22,
+                containerHeight: 520
+            };
+        }
+
+        init() {
+            // Initial responsive calculation
+            this.updateScale();
+
+            // Set accessibility attributes and tints
             this.cards.forEach((card, idx) => {
-                card.style.borderRadius = `${this.options.radius}px`;
                 card.setAttribute('role', 'group');
                 card.setAttribute('aria-roledescription', 'slide');
                 card.setAttribute('aria-label', `${idx + 1} of ${this.count}`);
@@ -82,13 +205,12 @@
                 if (!card.querySelector('.depth-carousel__tint')) {
                     const tintEl = document.createElement('span');
                     tintEl.className = 'depth-carousel__tint';
-                    tintEl.style.background = this.options.tint;
+                    tintEl.style.background = this.baseOptions.tint;
                     card.appendChild(tintEl);
                 }
 
                 // Click to focus card
                 card.addEventListener('click', (e) => {
-                    // Do not focus if user was dragging or clicked a button/link inside caption
                     if (this.drag && this.drag.moved) return;
                     if (e.target.closest('a') || e.target.closest('button')) return;
                     this.setFocus(idx, true);
@@ -104,11 +226,10 @@
             this.bindEvents();
 
             // Initial layout calculation
-            this.updateScale();
             this.layout(this.pos);
 
             // Start autoplay if enabled
-            if (this.options.autoplay && !this.reducedMotion && this.count > 1) {
+            if (this.baseOptions.autoplay && !this.reducedMotion && this.count > 1) {
                 this.startAutoplay();
             }
         }
@@ -118,7 +239,7 @@
             this.prevBtn = this.container.querySelector('.depth-carousel__arrow--prev');
             this.nextBtn = this.container.querySelector('.depth-carousel__arrow--next');
 
-            if (!this.prevBtn && this.options.showControls && this.count > 1) {
+            if (!this.prevBtn && this.baseOptions.showControls && this.count > 1) {
                 this.prevBtn = document.createElement('button');
                 this.prevBtn.type = 'button';
                 this.prevBtn.className = 'depth-carousel__arrow depth-carousel__arrow--prev';
@@ -131,7 +252,7 @@
                 this.container.appendChild(this.prevBtn);
             }
 
-            if (!this.nextBtn && this.options.showControls && this.count > 1) {
+            if (!this.nextBtn && this.baseOptions.showControls && this.count > 1) {
                 this.nextBtn = document.createElement('button');
                 this.nextBtn.type = 'button';
                 this.nextBtn.className = 'depth-carousel__arrow depth-carousel__arrow--next';
@@ -160,7 +281,7 @@
 
             // Dot indicators
             this.dotsContainer = this.container.querySelector('.depth-carousel__dots');
-            if (!this.dotsContainer && this.options.showIndicators && this.count > 1) {
+            if (!this.dotsContainer && this.baseOptions.showIndicators && this.count > 1) {
                 this.dotsContainer = document.createElement('div');
                 this.dotsContainer.className = 'depth-carousel__dots';
                 this.dotsContainer.setAttribute('role', 'tablist');
@@ -240,17 +361,27 @@
         }
 
         updateScale(currentWidth) {
-            const w = currentWidth || this.container.getBoundingClientRect().width || window.innerWidth;
-            const needed = this.options.cardWidth + Math.abs(this.options.spread) * 2 + 80;
-            this.scale = clamp(w / needed, 0.45, 1);
+            const w = currentWidth || (this.container ? this.container.getBoundingClientRect().width : window.innerWidth) || window.innerWidth;
+            const bp = this.getBreakpointConfig(w);
+            this.currentConfig = Object.assign({}, this.baseOptions, bp);
+
+            // Apply synchronized CSS properties to container
+            this.container.style.setProperty('--dc-card-width', `${this.currentConfig.cardWidth}px`);
+            this.container.style.setProperty('--dc-card-height', `${this.currentConfig.cardHeight}px`);
+            this.container.style.setProperty('--dc-card-radius', `${this.currentConfig.radius}px`);
+            this.container.style.setProperty('--dc-stage-height', `${this.currentConfig.containerHeight}px`);
+            this.container.style.setProperty('--dc-perspective', `${this.currentConfig.perspective}px`);
+
+            this.scale = this.currentConfig.scale || 1.0;
         }
 
         layout(pos) {
-            const cfg = this.options;
+            const cfg = this.currentConfig;
             const n = this.count;
             if (!n) return;
             const dir = cfg.tiltDirection === 'left' ? -1 : 1;
             const sc = this.scale;
+            const stageOffX = cfg.stageOffsetX || 0;
 
             for (let i = 0; i < n; i++) {
                 const el = this.cards[i];
@@ -267,7 +398,7 @@
                 const shown = az <= cfg.visibleCards + 0.5;
 
                 const tz = -cfg.depth * d;
-                const tx = dir * cfg.spread * d;
+                const tx = stageOffX + dir * cfg.spread * d;
                 const ry = dir * cfg.tilt * clamp(d, 0, 1);
 
                 let opacity = d < 0 ? Math.max(0, 1 + d) : 1;
@@ -305,8 +436,8 @@
                 });
             }
 
-            if (typeof this.options.onChange === 'function') {
-                this.options.onChange(idx, this.cards[idx]);
+            if (typeof this.baseOptions.onChange === 'function') {
+                this.baseOptions.onChange(idx, this.cards[idx]);
             }
         }
 
@@ -316,7 +447,7 @@
                 this.tween = null;
             }
 
-            const cfg = this.options;
+            const cfg = this.currentConfig;
             const dur = animate && !this.reducedMotion ? cfg.duration / 1000 : 0;
 
             if (window.gsap && dur > 0) {
@@ -345,7 +476,7 @@
         }
 
         setFocus(rawIndex, animate = true) {
-            const cfg = this.options;
+            const cfg = this.currentConfig;
             const n = this.count;
             if (!n) return;
             const idx = cfg.loop ? ((rawIndex % n) + n) % n : clamp(rawIndex, 0, n - 1);
@@ -388,7 +519,7 @@
         onPointerMove(e) {
             const drag = this.drag;
             if (!drag) return;
-            const stepPx = Math.max(this.options.cardWidth * 0.55 * this.scale, 40);
+            const stepPx = Math.max((this.currentConfig.cardWidth || 280) * 0.5, 40);
             const dx = e.clientX - drag.x;
 
             if (!drag.moved && Math.abs(dx) > 4) {
@@ -417,7 +548,7 @@
             this.drag = null;
             if (!drag.moved) return;
 
-            const stepPx = Math.max(this.options.cardWidth * 0.55 * this.scale, 40);
+            const stepPx = Math.max((this.currentConfig.cardWidth || 280) * 0.5, 40);
             const projected = this.pos - (drag.v * 180) / stepPx;
             this.setFocus(Math.round(projected), true);
         }
@@ -434,7 +565,7 @@
             }
 
             const delta = e.deltaMode === 1 ? raw * 24 : raw;
-            const step = clamp(delta / (this.options.cardWidth * 0.9), -0.6, 0.6);
+            const step = clamp(delta / ((this.currentConfig.cardWidth || 280) * 0.9), -0.6, 0.6);
             this.pos += step;
             this.layout(this.pos);
 
@@ -446,8 +577,8 @@
 
         startAutoplay() {
             this.stopAutoplay();
-            if (!this.options.autoplay || this.count < 2) return;
-            const delay = Math.max(this.options.autoplayDelay, 1000);
+            if (!this.baseOptions.autoplay || this.count < 2) return;
+            const delay = Math.max(this.baseOptions.autoplayDelay, 1000);
             this.autoTimer = setInterval(() => {
                 if (!this.isHovered && !this.isFocused) {
                     this.navigateBy(1);
@@ -480,7 +611,7 @@
             carouselEl.dataset.initialized = 'true';
             window.andyDepthCarousel = new DepthCarousel(carouselEl, {
                 depth: 220,
-                spread: 95,
+                spread: 90,
                 tilt: 22,
                 tiltDirection: 'right',
                 perspective: 1400,
@@ -488,7 +619,7 @@
                 falloff: 0.22,
                 blur: 5,
                 autoplay: true,
-                autoplayDelay: 3400,
+                autoplayDelay: 3500,
                 loop: true
             });
         }

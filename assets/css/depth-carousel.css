@@ -13,8 +13,8 @@
 .depth-carousel {
     position: relative;
     width: 100%;
-    height: 520px;
-    min-height: 400px;
+    height: var(--dc-stage-height, 520px);
+    min-height: 380px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -47,9 +47,9 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 320px;
-    height: 440px;
-    border-radius: 18px;
+    width: var(--dc-card-width, 320px);
+    height: var(--dc-card-height, 440px);
+    border-radius: var(--dc-card-radius, 18px);
     transform-origin: center center;
     overflow: hidden;
     background: #0b0f19;
@@ -245,18 +245,144 @@
     }
 }
 
-/* Responsiveness */
-@media (max-width: 992px) {
-    .depth-carousel {
-        height: 480px;
+/* ==========================================================================
+   Multi-Screen Responsiveness (Breakpoints: 1200px, 992px, 768px, 480px, 360px)
+   ========================================================================== */
+
+/* Laptop / Medium Desktop (≤ 1199px) */
+@media (max-width: 1199px) {
+    .depth-carousel__title {
+        font-size: 19px;
     }
-    .depth-carousel__card {
-        width: 280px;
-        height: 400px;
+    .depth-carousel__desc {
+        font-size: 11.5px;
+    }
+}
+
+/* Tablet Landscape (≤ 992px) */
+@media (max-width: 992px) {
+    .depth-carousel-container {
+        padding: 10px 0 30px;
+    }
+    .depth-carousel__title {
+        font-size: 18px;
+    }
+    .depth-carousel__desc {
+        font-size: 11px;
+        margin-bottom: 8px;
     }
     .depth-carousel__arrow {
-        width: 40px;
-        height: 40px;
+        width: 42px;
+        height: 42px;
+    }
+    .depth-carousel__arrow--prev {
+        left: 12px;
+    }
+    .depth-carousel__arrow--next {
+        right: 12px;
+    }
+}
+
+/* Mobile & Tablet Portrait (≤ 768px)
+   Move arrow controls to bottom bar flanking dots to eliminate overlap with cards */
+@media (max-width: 768px) {
+    .depth-carousel-container {
+        padding: 10px 0 25px;
+    }
+    .depth-carousel__caption {
+        padding: 18px 14px 16px;
+        gap: 5px;
+    }
+    .depth-carousel__badge {
+        font-size: 10px;
+        padding: 2px 7px;
+    }
+    .depth-carousel__title {
+        font-size: 17px;
+    }
+    .depth-carousel__desc {
+        font-size: 11px;
+        line-height: 1.35;
+        margin-bottom: 6px;
+    }
+    .depth-carousel__btn {
+        padding: 7px 12px;
+        font-size: 11px;
+        border-radius: 5px;
+    }
+
+    /* Bottom-docked arrows on mobile: thumb-friendly and zero overlap */
+    .depth-carousel__arrow {
+        top: auto;
+        bottom: 12px;
+        transform: none;
+        width: 38px;
+        height: 38px;
+        background: rgba(11, 15, 25, 0.88);
+    }
+    .depth-carousel__arrow:hover {
+        transform: scale(1.06);
+    }
+    .depth-carousel__arrow:active {
+        transform: scale(0.94);
+    }
+    .depth-carousel__arrow--prev {
+        left: 16px;
+    }
+    .depth-carousel__arrow--next {
+        right: 16px;
+    }
+    .depth-carousel__dots {
+        bottom: 14px;
+        padding: 6px 12px;
+        gap: 6px;
+    }
+    .depth-carousel__dot {
+        width: 7px;
+        height: 7px;
+    }
+    .depth-carousel__dot.is-active {
+        width: 20px;
+    }
+}
+
+/* Small Mobile Phones (≤ 480px, e.g. iPhone SE, Galaxy S8 360-400px) */
+@media (max-width: 480px) {
+    .depth-carousel-container {
+        padding: 5px 0 20px;
+    }
+    .depth-carousel__caption {
+        padding: 14px 12px 14px;
+        gap: 4px;
+    }
+    .depth-carousel__badge {
+        font-size: 9px;
+        padding: 2px 6px;
+        letter-spacing: 0.5px;
+        margin-bottom: 0;
+    }
+    .depth-carousel__title {
+        font-size: 15px;
+    }
+    .depth-carousel__desc {
+        font-size: 10.5px;
+        line-height: 1.3;
+        margin-bottom: 5px;
+        -webkit-line-clamp: 2;
+    }
+    .depth-carousel__btn {
+        padding: 6px 11px;
+        font-size: 10.5px;
+        gap: 4px;
+    }
+    .depth-carousel__arrow {
+        bottom: 10px;
+        width: 34px;
+        height: 34px;
+    }
+    .depth-carousel__arrow svg {
+        width: 17px;
+        height: 17px;
     }
     .depth-carousel__arrow--prev {
         left: 10px;
@@ -264,55 +390,17 @@
     .depth-carousel__arrow--next {
         right: 10px;
     }
-}
-
-@media (max-width: 768px) {
-    .depth-carousel {
-        height: 460px;
-    }
-    .depth-carousel__card {
-        width: 260px;
-        height: 380px;
-        border-radius: 14px;
-    }
-    .depth-carousel__title {
-        font-size: 18px;
-    }
-    .depth-carousel__desc {
-        font-size: 11px;
-    }
-    .depth-carousel__btn {
-        padding: 7px 12px;
-        font-size: 11px;
-    }
-    .depth-carousel__arrow {
-        width: 36px;
-        height: 36px;
-    }
-    .depth-carousel__arrow--prev {
-        left: 6px;
-    }
-    .depth-carousel__arrow--next {
-        right: 6px;
-    }
-}
-
-@media (max-width: 480px) {
-    .depth-carousel {
-        height: 430px;
-    }
-    .depth-carousel__card {
-        width: 240px;
-        height: 350px;
-    }
-    .depth-carousel__caption {
-        padding: 16px 14px 14px;
-    }
-    .depth-carousel__title {
-        font-size: 16px;
-    }
     .depth-carousel__dots {
-        bottom: 4px;
-        padding: 6px 10px;
+        bottom: 12px;
+        padding: 5px 10px;
+        gap: 5px;
+    }
+    .depth-carousel__dot {
+        width: 6px;
+        height: 6px;
+    }
+    .depth-carousel__dot.is-active {
+        width: 16px;
     }
 }
+
