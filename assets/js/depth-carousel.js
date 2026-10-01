@@ -578,9 +578,11 @@
         startAutoplay() {
             this.stopAutoplay();
             if (!this.baseOptions.autoplay || this.count < 2) return;
+            if (this.container.offsetParent === null && window.innerWidth < 768) return;
             const delay = Math.max(this.baseOptions.autoplayDelay, 1000);
             this.autoTimer = setInterval(() => {
                 if (!this.isHovered && !this.isFocused) {
+                    if (this.container.offsetParent === null) return;
                     this.navigateBy(1);
                 }
             }, delay);
