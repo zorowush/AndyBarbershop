@@ -195,34 +195,84 @@
     }
 }
 
-/* SlickNav mobile menu override for dark theme */
+/* ==========================================
+   SLICKNAV MOBILE MENU OVERRIDE (DARK SLATE & GOLD)
+   ========================================== */
 .slicknav_menu {
-    background: #0b0f19 !important;
-    border-top: 1px solid rgba(212, 175, 55, 0.2);
-}
-
-.slicknav_nav a {
-    color: rgba(255, 255, 255, 0.85) !important;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-}
-
-.slicknav_nav a:hover {
-    color: #d4af37 !important;
-    background: rgba(212, 175, 55, 0.1) !important;
-}
-
-.slicknav_nav .slicknav_item a {
-    color: rgba(255, 255, 255, 0.85) !important;
+    background: transparent !important;
+    border-top: none !important;
 }
 
 .slicknav_btn {
-    background-color: transparent !important;
-    border: 1px solid rgba(212, 175, 55, 0.4);
-    border-radius: 4px;
+    background-color: rgba(22, 31, 48, 0.9) !important;
+    border: 1px solid rgba(212, 175, 55, 0.45) !important;
+    border-radius: 6px !important;
+    padding: 7px 10px !important;
+    cursor: pointer !important;
+    transition: all 0.25s ease !important;
+}
+
+.slicknav_btn:hover,
+.slicknav_btn.slicknav_open {
+    background-color: #161f30 !important;
+    border-color: #d4af37 !important;
 }
 
 .slicknav_icon-bar {
     background-color: #d4af37 !important;
+}
+
+/* FIX: Ensure .slicknav_nav dropdown has solid dark background and high z-index */
+.mobile_menu .slicknav_menu .slicknav_nav,
+.slicknav_nav {
+    background: #0b0f19 !important;
+    border: 1px solid rgba(212, 175, 55, 0.35) !important;
+    border-radius: 10px !important;
+    padding: 12px 8px !important;
+    margin-top: 12px !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9) !important;
+    position: relative !important;
+    z-index: 999999 !important;
+}
+
+.mobile_menu .slicknav_menu .slicknav_nav li,
+.slicknav_nav li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    margin: 2px 0 !important;
+    display: block !important;
+}
+
+.mobile_menu .slicknav_menu .slicknav_nav li:last-child,
+.slicknav_nav li:last-child {
+    border-bottom: none !important;
+}
+
+/* Visible, crisp white text with clear gold hover */
+.mobile_menu .slicknav_menu .slicknav_nav a,
+.slicknav_nav a {
+    color: #ffffff !important;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    padding: 12px 16px !important;
+    border-radius: 6px !important;
+    display: block !important;
+    text-decoration: none !important;
+    background: transparent !important;
+    transition: all 0.2s ease !important;
+}
+
+.mobile_menu .slicknav_menu .slicknav_nav a:hover,
+.mobile_menu .slicknav_menu .slicknav_nav li.active > a,
+.slicknav_nav a:hover,
+.slicknav_nav li.active > a {
+    color: #d4af37 !important;
+    background: rgba(212, 175, 55, 0.15) !important;
+    padding-left: 22px !important;
+}
+
+.slicknav_nav .slicknav_item a {
+    color: #ffffff !important;
 }
 
 /* Header Booking Button */

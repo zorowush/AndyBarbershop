@@ -195,26 +195,28 @@
   padding: 0;
 }
 .slicknav_icon-bar {
-    background: #fff !important;
+    background: #d4af37 !important;
 }
 .slicknav_nav {
-	background: #fff;
+	background: #0b0f19;
 	float: right;
 	margin-top: 11px;
-	padding: 19px;
+	padding: 16px 12px;
 	width: 100%;
-	border-bottom: 1px solid #eee;
+	border: 1px solid rgba(212, 175, 55, 0.3);
+	border-radius: 10px;
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.85);
 }
 .slicknav_nav a:hover {
-    background: #F79960 none repeat scroll 0 0;
-    border-radius: 0;
-    color: #ffffff;
+    background: rgba(212, 175, 55, 0.15) none repeat scroll 0 0;
+    border-radius: 6px;
+    color: #d4af37;
 }
 
 .slicknav_nav a {
-    font-size: 14px;
-    font-weight: 400;
-    color: #000;
+    font-size: 15px;
+    font-weight: 600;
+    color: #ffffff;
     text-transform: capitalize;
 }
 

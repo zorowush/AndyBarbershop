@@ -37,7 +37,8 @@
       menu.slicknav({
         prependTo: ".mobile_menu",
         closedSymbol: '+',
-        openedSymbol:'-'
+        openedSymbol: '-',
+        closeOnClick: true
       });
     };
 
