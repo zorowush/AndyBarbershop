@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="assets/css/nice-select.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/andy-custom.css">
+    <link rel="stylesheet" href="assets/css/depth-carousel.css">
 </head>
 <body id="home">
     <!-- Preloader Start -->
@@ -396,7 +397,7 @@
             <div class="container">
                 <!-- Section Title -->
                 <div class="row justify-content-center">
-                    <div class="col-xl-7 col-lg-8 col-md-10 text-center mb-80">
+                    <div class="col-xl-7 col-lg-8 col-md-10 text-center mb-40">
                         <div class="section-tittle">
                             <span>Gaya Rambut</span>
                             <h2>Inspirasi Potongan Populer</h2>
@@ -404,47 +405,86 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="box snake mb-30">
-                            <div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1622287162716-f311baa1a2b8?auto=format&fit=crop&w=1200&q=85');"></div>
-                            <div class="overlay">
-                                <div class="overlay-content text-center p-3">
-                                    <h4 style="color:#d4af37; font-weight:700;">Taper Fade</h4>
-                                    <p style="color:#ffffff; font-size:13px;">Gradasi halus samping dan belakang yang rapi dan elegan.</p>
+                <!-- 3D DepthCarousel Container (React Bits) -->
+                <div class="depth-carousel-container">
+                    <div id="haircut-depth-carousel" class="depth-carousel" tabindex="0">
+                        <div class="depth-carousel__stage">
+                            <!-- Model 1: Taper Fade -->
+                            <div class="depth-carousel__card">
+                                <img class="depth-carousel__img" src="https://images.unsplash.com/photo-1622287162716-f311baa1a2b8?auto=format&fit=crop&w=1200&q=85" alt="Taper Fade" />
+                                <span class="depth-carousel__tint"></span>
+                                <div class="depth-carousel__caption">
+                                    <span class="depth-carousel__badge">Best Seller</span>
+                                    <h4 class="depth-carousel__title">Taper Fade</h4>
+                                    <p class="depth-carousel__desc">Gradasi halus samping & tengkuk yang presisi, rapi dan segar untuk sehari-hari.</p>
+                                    <a href="#bookingModal" data-toggle="modal" data-target="#bookingModal" class="depth-carousel__btn btn-open-booking">
+                                        <i class="fab fa-whatsapp"></i> Booking Model Ini
+                                    </a>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-8 col-md-6 col-sm-6">
-                        <div class="box snake mb-30">
-                            <div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=1200&q=85');"></div>
-                            <div class="overlay">
-                                <div class="overlay-content text-center p-3">
-                                    <h4 style="color:#d4af37; font-weight:700;">Two Block & Comma Hair</h4>
-                                    <p style="color:#ffffff; font-size:13px;">Gaya rambut ala Korea dengan layer modern dan bervolume.</p>
+                            <!-- Model 2: Two Block & Comma Hair -->
+                            <div class="depth-carousel__card">
+                                <img class="depth-carousel__img" src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=1200&q=85" alt="Two Block & Comma Hair" />
+                                <span class="depth-carousel__tint"></span>
+                                <div class="depth-carousel__caption">
+                                    <span class="depth-carousel__badge">Trending Korean</span>
+                                    <h4 class="depth-carousel__title">Two Block & Comma</h4>
+                                    <p class="depth-carousel__desc">Layer bervolume dengan poni koma dan undercut rapi samping yang stylish.</p>
+                                    <a href="#bookingModal" data-toggle="modal" data-target="#bookingModal" class="depth-carousel__btn btn-open-booking">
+                                        <i class="fab fa-whatsapp"></i> Booking Model Ini
+                                    </a>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-8 col-md-6 col-sm-6">
-                        <div class="box snake mb-30">
-                            <div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1200&q=85');"></div>
-                            <div class="overlay">
-                                <div class="overlay-content text-center p-3">
-                                    <h4 style="color:#d4af37; font-weight:700;">Classic Side Part & Pompadour</h4>
-                                    <p style="color:#ffffff; font-size:13px;">Gaya formal maskulin untuk acara resmi dan kantor.</p>
+                            <!-- Model 3: Classic Side Part & Pompadour -->
+                            <div class="depth-carousel__card">
+                                <img class="depth-carousel__img" src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1200&q=85" alt="Classic Side Part & Pompadour" />
+                                <span class="depth-carousel__tint"></span>
+                                <div class="depth-carousel__caption">
+                                    <span class="depth-carousel__badge">Gentleman Look</span>
+                                    <h4 class="depth-carousel__title">Side Part Pompadour</h4>
+                                    <p class="depth-carousel__desc">Gaya formal maskulin dengan belahan rambut tegas dan kilau pomade rapi.</p>
+                                    <a href="#bookingModal" data-toggle="modal" data-target="#bookingModal" class="depth-carousel__btn btn-open-booking">
+                                        <i class="fab fa-whatsapp"></i> Booking Model Ini
+                                    </a>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="box snake mb-30">
-                            <div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=1200&q=85');"></div>
-                            <div class="overlay">
-                                <div class="overlay-content text-center p-3">
-                                    <h4 style="color:#d4af37; font-weight:700;">French Crop & Textured Cut</h4>
-                                    <p style="color:#ffffff; font-size:13px;">Poni pendek dengan tekstur tegas di bagian atas kepala.</p>
+                            <!-- Model 4: French Crop & Textured Cut -->
+                            <div class="depth-carousel__card">
+                                <img class="depth-carousel__img" src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=1200&q=85" alt="French Crop & Textured Cut" />
+                                <span class="depth-carousel__tint"></span>
+                                <div class="depth-carousel__caption">
+                                    <span class="depth-carousel__badge">Low Maintenance</span>
+                                    <h4 class="depth-carousel__title">French Crop</h4>
+                                    <p class="depth-carousel__desc">Poni pendek dengan tekstur tegas di atas kepala, simpel tanpa ribet styling.</p>
+                                    <a href="#bookingModal" data-toggle="modal" data-target="#bookingModal" class="depth-carousel__btn btn-open-booking">
+                                        <i class="fab fa-whatsapp"></i> Booking Model Ini
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Model 5: Modern Mullet & Wolf Cut -->
+                            <div class="depth-carousel__card">
+                                <img class="depth-carousel__img" src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=1200&q=85" alt="Modern Mullet & Wolf Cut" />
+                                <span class="depth-carousel__tint"></span>
+                                <div class="depth-carousel__caption">
+                                    <span class="depth-carousel__badge">Edgy & Bold</span>
+                                    <h4 class="depth-carousel__title">Modern Mullet</h4>
+                                    <p class="depth-carousel__desc">Potongan rambut tren modern dengan ekor leher berkarakter dan taper samping.</p>
+                                    <a href="#bookingModal" data-toggle="modal" data-target="#bookingModal" class="depth-carousel__btn btn-open-booking">
+                                        <i class="fab fa-whatsapp"></i> Booking Model Ini
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Model 6: Clean Buzz Cut & Line Up -->
+                            <div class="depth-carousel__card">
+                                <img class="depth-carousel__img" src="https://images.unsplash.com/photo-1558521432-23ac0222f962?auto=format&fit=crop&w=1200&q=85" alt="Clean Buzz Cut & Line Up" />
+                                <span class="depth-carousel__tint"></span>
+                                <div class="depth-carousel__caption">
+                                    <span class="depth-carousel__badge">Sharp & Masculine</span>
+                                    <h4 class="depth-carousel__title">Buzz Cut & Fade</h4>
+                                    <p class="depth-carousel__desc">Potongan cepak militer modern dengan garis pelipis tegas dan fade sangat rapi.</p>
+                                    <a href="#bookingModal" data-toggle="modal" data-target="#bookingModal" class="depth-carousel__btn btn-open-booking">
+                                        <i class="fab fa-whatsapp"></i> Booking Model Ini
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -821,6 +861,12 @@
     <!-- Jquery Plugins, Main Jquery -->	
     <script src="./assets/js/plugins.js"></script>
     <script src="./assets/js/main.js"></script>
+
+    <!-- GSAP for 3D DepthCarousel Animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <!-- DepthCarousel Component Script (React Bits) -->
+    <script src="./assets/js/depth-carousel.js"></script>
+
     <!-- Custom Andy Barbershop Logic -->
     <script src="./assets/js/andy-barber.js"></script>
 </body>
