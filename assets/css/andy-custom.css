@@ -203,19 +203,72 @@
     border-top: none !important;
 }
 
-.slicknav_btn {
-    background-color: rgba(22, 31, 48, 0.9) !important;
+.slicknav_btn,
+.mobile_menu .slicknav_btn,
+.mobile_menu .slicknav_menu .slicknav_btn {
+    background-color: rgba(22, 31, 48, 0.95) !important;
     border: 1px solid rgba(212, 175, 55, 0.45) !important;
-    border-radius: 6px !important;
-    padding: 7px 10px !important;
+    border-radius: 8px !important;
+    width: 42px !important;
+    height: 40px !important;
+    padding: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
     cursor: pointer !important;
-    transition: all 0.25s ease !important;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+    outline: none !important;
+    text-decoration: none !important;
 }
 
 .slicknav_btn:hover,
-.slicknav_btn.slicknav_open {
+.slicknav_btn.slicknav_open,
+.mobile_menu .slicknav_btn:hover,
+.mobile_menu .slicknav_btn.slicknav_open {
     background-color: #161f30 !important;
     border-color: #d4af37 !important;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.35) !important;
+}
+
+/* Hide default 3-bar span icons to ensure strictly clean icon-only button */
+.slicknav_btn .slicknav_icon,
+.mobile_menu .slicknav_icon {
+    display: none !important;
+}
+
+/* Style the icon inside menutxt container */
+.slicknav_btn .slicknav_menutxt,
+.mobile_menu .slicknav_menutxt,
+.mobile_menu .slicknav_menu .slicknav_menutxt {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 20px !important;
+    line-height: 1 !important;
+    color: #d4af37 !important;
+    transition: transform 0.25s ease, color 0.25s ease !important;
+}
+
+.slicknav_btn:hover .slicknav_menutxt,
+.mobile_menu .slicknav_btn:hover .slicknav_menutxt {
+    color: #f1c40f !important;
+}
+
+/* When open, icon morphs smoothly into close icon (fa-times) */
+.slicknav_btn.slicknav_open .slicknav_menutxt #slicknav-toggle-icon::before,
+.slicknav_btn.slicknav_open .slicknav_menutxt .fa-bars::before,
+.mobile_menu .slicknav_btn.slicknav_open .slicknav_menutxt #slicknav-toggle-icon::before,
+.mobile_menu .slicknav_btn.slicknav_open .slicknav_menutxt .fa-bars::before {
+    content: "\f00d" !important;
+}
+
+.slicknav_btn.slicknav_open .slicknav_menutxt,
+.mobile_menu .slicknav_btn.slicknav_open .slicknav_menutxt {
+    color: #f1c40f !important;
+    transform: rotate(90deg);
 }
 
 .slicknav_icon-bar {

@@ -36,9 +36,16 @@
     if(menu.length){
       menu.slicknav({
         prependTo: ".mobile_menu",
+        label: '<i class="fas fa-bars" id="slicknav-toggle-icon"></i>',
         closedSymbol: '+',
         openedSymbol: '-',
-        closeOnClick: true
+        closeOnClick: true,
+        afterOpen: function() {
+          $('#slicknav-toggle-icon').removeClass('fa-bars').addClass('fa-times');
+        },
+        afterClose: function() {
+          $('#slicknav-toggle-icon').removeClass('fa-times').addClass('fa-bars');
+        }
       });
     };
 
