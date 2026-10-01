@@ -1079,17 +1079,6 @@
                         </div>
                         <h3 class="footer-heading mb-2">Tetap Terhubung</h3>
                         <p class="footer-subtext mb-4">Dapatkan info promo spesial, tips perawatan rambut pria, dan pembaruan jadwal terkini dari Andy Barbershop.</p>
-                        
-                        <!-- Newsletter Form -->
-                        <form class="footer-newsletter-form position-relative" id="footerNewsletterForm" onsubmit="event.preventDefault(); document.getElementById('newsletter-success').style.display='block'; this.reset();">
-                            <input type="email" class="form-control footer-newsletter-input" placeholder="Masukkan email Anda..." required>
-                            <button type="submit" class="btn footer-newsletter-btn" aria-label="Kirim Email">
-                                <i class="fas fa-paper-plane"></i>
-                            </button>
-                        </form>
-                        <div id="newsletter-success" class="newsletter-success-msg mt-2" style="display:none; color: #10b981; font-size: 13px;">
-                            <i class="fas fa-check-circle mr-1"></i> Terima kasih! Anda telah terdaftar.
-                        </div>
                     </div>
 
                     <!-- Column 2: Quick Links -->
@@ -1109,19 +1098,31 @@
                     <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 footer-col">
                         <h4 class="footer-col-title mb-3">Kontak & Alamat</h4>
                         <div class="footer-contact-details">
-                            <p class="mb-2 d-flex">
-                                <i class="fas fa-map-marker-alt text-gold mt-1 mr-2"></i>
-                                <span>Bakalan RT 02 / RW 01, Kalinyamatan, Jepara, Jawa Tengah</span>
-                            </p>
-                            <p class="mb-2 d-flex">
-                                <i class="fab fa-whatsapp text-gold mt-1 mr-2"></i>
-                                <a href="https://wa.me/6289690752162" target="_blank" rel="noopener" class="text-white hover-gold">0896-9075-2162</a>
-                            </p>
-                            <p class="mb-2 d-flex">
-                                <i class="fas fa-clock text-gold mt-1 mr-2"></i>
-                                <span>Buka Setiap Hari (Malam s/d 23:00 WIB)</span>
-                            </p>
-                            <div class="footer-rating-pill mt-3 d-inline-flex align-items-center">
+                            <div class="footer-contact-item">
+                                <span class="footer-contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </span>
+                                <span class="footer-contact-text">
+                                    Bakalan RT 02 / RW 01, Kalinyamatan, Jepara, Jawa Tengah
+                                </span>
+                            </div>
+                            <div class="footer-contact-item">
+                                <span class="footer-contact-icon">
+                                    <i class="fab fa-whatsapp"></i>
+                                </span>
+                                <a href="https://wa.me/6289690752162" target="_blank" rel="noopener" class="footer-contact-text footer-contact-link">
+                                    0896-9075-2162
+                                </a>
+                            </div>
+                            <div class="footer-contact-item">
+                                <span class="footer-contact-icon">
+                                    <i class="fas fa-clock"></i>
+                                </span>
+                                <span class="footer-contact-text">
+                                    Buka Setiap Hari (Malam s/d 23:00 WIB)
+                                </span>
+                            </div>
+                            <div class="footer-rating-pill mt-2 d-inline-flex align-items-center">
                                 <i class="fab fa-google text-warning mr-2"></i>
                                 <span>Rating 4.6★ di Google Maps</span>
                             </div>
@@ -1148,12 +1149,6 @@
 
                         <!-- Theme Status & Fast Booking -->
                         <div class="footer-theme-status p-3 rounded">
-                            <div class="d-flex align-items-center justify-content-between mb-2">
-                                <span class="d-flex align-items-center font-weight-bold" style="font-size: 13px; color: #cbd5e1;">
-                                    <i class="fas fa-moon text-gold mr-2"></i> Dark Mode Active
-                                </span>
-                                <span class="badge badge-warning text-dark font-weight-bold" style="font-size: 10px;">PREMIUM</span>
-                            </div>
                             <a href="#bookingModal" data-toggle="modal" data-target="#bookingModal" class="btn header-btn-wa btn-sm w-100 mt-2 text-center">
                                 <i class="fab fa-whatsapp mr-1"></i> Booking Antrean
                             </a>
