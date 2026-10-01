@@ -1060,100 +1060,122 @@
         <!-- Testimonials Section End -->
     </main>
 
-    <!-- Footer Start -->
-    <footer id="contact-footer">
-        <div class="footer-area section-bg" data-background="assets/img/gallery/footer_bg.png">
-            <div class="container">
-                <div class="footer-top footer-padding">
-                    <div class="row d-flex justify-content-between">
-                        <!-- Brand Info -->
-                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-8 mb-40">
-                            <div class="single-footer-caption">
-                                <div class="footer-logo mb-25">
-                                    <a href="index.html">
-                                        <img src="assets/img/logo/LogoBarbershop.png" alt="Andy Barbershop Logo">
-                                    </a>
+    <!-- Footer Start (Modern 4-Column Footer Section) -->
+    <footer id="contact-footer" class="modern-footer-section">
+        <div class="footer-ambient-glow"></div>
+        <div class="container position-relative" style="z-index: 2;">
+            <div class="footer-main-content py-5">
+                <div class="row">
+                    <!-- Column 1: Stay Connected (Newsletter) -->
+                    <div class="col-lg-4 col-md-6 mb-4 mb-lg-0 footer-col">
+                        <div class="footer-logo mb-3">
+                            <a href="index.html" class="d-inline-flex align-items-center">
+                                <img src="assets/img/logo/LogoBarbershop.png" alt="Andy Barbershop Logo" style="height: 48px; width: auto;">
+                                <div class="logo-brand-text ml-2">
+                                    Andy Barbershop
+                                    <span>Hairstyle Specialist</span>
                                 </div>
-                                <div class="footer-tittle">
-                                    <div class="footer-pera">
-                                        <p class="info1">Andy Barbershop - Jasa pangkas rambut pria dan perawatan rambut terpercaya di Bakalan, Kalinyamatan, Jepara. Rating 4.6★ di Google Maps.</p>
-                                    </div>
-                                </div>
-                                <div class="footer-number mt-20">
-                                    <h4><span>WA: </span>0896-9075-2162</h4>
-                                    <p>Bakalan RT 02 / RW 01, Kalinyamatan, Jepara</p>
-                                </div>
-                            </div>
+                            </a>
                         </div>
-
-                        <!-- Quick Navigation -->
-                        <div class="col-xl-2 col-lg-2 col-md-3 col-sm-4 mb-40">
-                            <div class="single-footer-caption">
-                                <div class="footer-tittle">
-                                    <h4>Navigasi</h4>
-                                    <ul>
-                                        <li><a href="#home">Home</a></li>
-                                        <li><a href="#about">Tentang Kami</a></li>
-                                        <li><a href="#services">Layanan & Harga</a></li>
-                                        <li><a href="#gallery">Galeri Gaya</a></li>
-                                        <li><a href="#schedule-location">Jam Operasional</a></li>
-                                        <li><a href="contact.html">Halaman Kontak</a></li>
-                                    </ul>
-                                </div>
-                            </div>
+                        <h3 class="footer-heading mb-2">Tetap Terhubung</h3>
+                        <p class="footer-subtext mb-4">Dapatkan info promo spesial, tips perawatan rambut pria, dan pembaruan jadwal terkini dari Andy Barbershop.</p>
+                        
+                        <!-- Newsletter Form -->
+                        <form class="footer-newsletter-form position-relative" id="footerNewsletterForm" onsubmit="event.preventDefault(); document.getElementById('newsletter-success').style.display='block'; this.reset();">
+                            <input type="email" class="form-control footer-newsletter-input" placeholder="Masukkan email Anda..." required>
+                            <button type="submit" class="btn footer-newsletter-btn" aria-label="Kirim Email">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                        <div id="newsletter-success" class="newsletter-success-msg mt-2" style="display:none; color: #10b981; font-size: 13px;">
+                            <i class="fas fa-check-circle mr-1"></i> Terima kasih! Anda telah terdaftar.
                         </div>
+                    </div>
 
-                        <!-- Operational Summary -->
-                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-40">
-                            <div class="single-footer-caption">
-                                <div class="footer-tittle">
-                                    <h4>Jam Buka</h4>
-                                    <ul style="color:#cbd5e1; font-size:14px; line-height:2.2;">
-                                        <li>Senin - Rabu: 19:00 - 22:00 WIB</li>
-                                        <li>Kamis: 19:00 - 23:00 WIB</li>
-                                        <li>Jumat: 19:00 - 22:00 WIB</li>
-                                        <li>Sabtu: 15:00 - 23:00 WIB</li>
-                                        <li>Minggu: 12:00 - 23:00 WIB</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                    <!-- Column 2: Quick Links -->
+                    <div class="col-lg-2 col-md-6 mb-4 mb-lg-0 footer-col">
+                        <h4 class="footer-col-title mb-3">Navigasi Cepat</h4>
+                        <ul class="footer-nav-list">
+                            <li><a href="#home"><i class="fas fa-chevron-right mr-2"></i>Home</a></li>
+                            <li><a href="#about"><i class="fas fa-chevron-right mr-2"></i>Tentang Kami</a></li>
+                            <li><a href="#services"><i class="fas fa-chevron-right mr-2"></i>Layanan & Harga</a></li>
+                            <li><a href="#gallery"><i class="fas fa-chevron-right mr-2"></i>Galeri Gaya</a></li>
+                            <li><a href="#schedule-location"><i class="fas fa-chevron-right mr-2"></i>Jadwal & Lokasi</a></li>
+                            <li><a href="contact.html"><i class="fas fa-chevron-right mr-2"></i>Kontak & Pesan</a></li>
+                        </ul>
+                    </div>
 
-                        <!-- CTA Box -->
-                        <div class="col-xl-3 col-lg-3 col-md-5 col-sm-8 mb-40">
-                            <div class="single-footer-caption">
-                                <div class="footer-tittle">
-                                    <h4>Booking Cepat</h4>
-                                    <div class="footer-pera">
-                                        <p class="info1">Ingin cukur tanpa menunggu lama? Hubungi kami langsung melalui WhatsApp resmi.</p>
-                                    </div>
-                                    <div class="mt-20">
-                                        <a href="#bookingModal" data-toggle="modal" data-target="#bookingModal" class="btn header-btn-wa btn-open-booking w-100 justify-content-center">
-                                            <i class="fab fa-whatsapp"></i> Chat WhatsApp
-                                        </a>
-                                    </div>
-                                </div>
+                    <!-- Column 3: Contact & Operational Info -->
+                    <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 footer-col">
+                        <h4 class="footer-col-title mb-3">Kontak & Alamat</h4>
+                        <div class="footer-contact-details">
+                            <p class="mb-2 d-flex">
+                                <i class="fas fa-map-marker-alt text-gold mt-1 mr-2"></i>
+                                <span>Bakalan RT 02 / RW 01, Kalinyamatan, Jepara, Jawa Tengah</span>
+                            </p>
+                            <p class="mb-2 d-flex">
+                                <i class="fab fa-whatsapp text-gold mt-1 mr-2"></i>
+                                <a href="https://wa.me/6289690752162" target="_blank" rel="noopener" class="text-white hover-gold">0896-9075-2162</a>
+                            </p>
+                            <p class="mb-2 d-flex">
+                                <i class="fas fa-clock text-gold mt-1 mr-2"></i>
+                                <span>Buka Setiap Hari (Malam s/d 23:00 WIB)</span>
+                            </p>
+                            <div class="footer-rating-pill mt-3 d-inline-flex align-items-center">
+                                <i class="fab fa-google text-warning mr-2"></i>
+                                <span>Rating 4.6★ di Google Maps</span>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Footer Bottom -->
-                <div class="footer-bottom">
-                    <div class="row d-flex justify-content-between align-items-center">
-                        <div class="col-xl-8 col-lg-8">
-                            <div class="footer-copy-right">
-                                <p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> Andy Barbershop. All rights reserved.</p>
-                            </div>
+                    <!-- Column 4: Follow Us & Theme Status -->
+                    <div class="col-lg-3 col-md-6 footer-col">
+                        <h4 class="footer-col-title mb-3">Ikuti & Kunjungi</h4>
+                        <div class="footer-social-icons mb-4">
+                            <a href="https://wa.me/6289690752162" target="_blank" rel="noopener" class="footer-social-btn" title="Chat WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="https://maps.google.com/?cid=6424364448530343425" target="_blank" rel="noopener" class="footer-social-btn" title="Google Maps Lokasi">
+                                <i class="fas fa-map-marked-alt"></i>
+                            </a>
+                            <a href="contact.html" class="footer-social-btn" title="Kirim Pesan">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="https://instagram.com" target="_blank" rel="noopener" class="footer-social-btn" title="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
                         </div>
-                        <div class="col-xl-4 col-lg-4">
-                            <!-- Footer Social -->
-                            <div class="footer-social f-right">
-                                <a href="https://wa.me/6289690752162" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
-                                <a href="https://maps.google.com/?cid=6424364448530343425" target="_blank" rel="noopener" title="Lokasi Google Maps"><i class="fas fa-map-marker-alt"></i></a>
-                                <a href="contact.html"><i class="far fa-envelope"></i></a>
+
+                        <!-- Theme Status & Fast Booking -->
+                        <div class="footer-theme-status p-3 rounded">
+                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                <span class="d-flex align-items-center font-weight-bold" style="font-size: 13px; color: #cbd5e1;">
+                                    <i class="fas fa-moon text-gold mr-2"></i> Dark Mode Active
+                                </span>
+                                <span class="badge badge-warning text-dark font-weight-bold" style="font-size: 10px;">PREMIUM</span>
                             </div>
+                            <a href="#bookingModal" data-toggle="modal" data-target="#bookingModal" class="btn header-btn-wa btn-sm w-100 mt-2 text-center">
+                                <i class="fab fa-whatsapp mr-1"></i> Booking Antrean
+                            </a>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom-bar border-top py-4">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-left mb-3 mb-md-0">
+                        <p class="mb-0 footer-copy-text">
+                            © <script>document.write(new Date().getFullYear());</script> <strong style="color: #d4af37;">Andy Barbershop</strong>. All rights reserved.
+                        </p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-right">
+                        <ul class="footer-policy-links mb-0">
+                            <li><a href="#home">Kebijakan Privasi</a></li>
+                            <li><a href="#services">Syarat Layanan</a></li>
+                            <li><a href="https://maps.google.com/?cid=6424364448530343425" target="_blank" rel="noopener">Petunjuk Arah</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
