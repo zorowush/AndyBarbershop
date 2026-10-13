@@ -15,6 +15,16 @@ ehthumbs.db
 *.swp
 *.swo
 
+# Environment & Secrets
+.env
+.env.*
+*.key
+*.pem
+
+# Editor-only TypeScript (not used at runtime)
+tsconfig.json
+components/react-ambient.d.ts
+
 # Antigravity Global Skills & Tools Junction
 .agents/skills
 .agents/playbook

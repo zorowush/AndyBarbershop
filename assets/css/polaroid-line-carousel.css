@@ -1,0 +1,363 @@
+/* ==========================================================================
+   Polaroid Line Carousel — Andy Barbershop Jepara (Amber Hearth Edition)
+   Instant photos pegged to a sagging string with spring & swing physics
+   ========================================================================== */
+
+.polaroid-carousel-container {
+    position: relative;
+    width: 100%;
+    margin: 30px 0 20px;
+    padding: 0;
+    overflow: hidden;
+    background: radial-gradient(circle at 50% 30%, rgba(35, 28, 22, 0.4) 0%, rgba(18, 17, 19, 0.95) 75%);
+    border-radius: 1.25rem;
+    border: 1px solid rgba(175, 128, 77, 0.25);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.pl-root {
+    position: relative;
+    width: 100%;
+    height: 620px;
+    overflow: hidden;
+    color: #fbfaf7;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: pan-y;
+    outline: none;
+    cursor: grab;
+    --pl-cw: 280px;
+}
+
+.pl-root[data-drag="1"] {
+    cursor: grabbing;
+}
+
+.pl-root:focus-visible {
+    box-shadow: inset 0 0 0 2px #af804d;
+}
+
+/* Sagging line SVG */
+.pl-string {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: visible;
+    z-index: 2;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5));
+}
+
+/* Hanging card container */
+.pl-card {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: var(--pl-cw);
+    transform-origin: 50% 0;
+    will-change: transform;
+    cursor: pointer;
+    transition: filter 0.4s ease;
+}
+
+/* Realistic vintage polaroid print */
+.pl-print {
+    margin-top: 14px;
+    background: #fbfaf7;
+    padding: 12px 12px 14px;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35), 0 22px 38px -12px rgba(0, 0, 0, 0.65);
+    transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1), filter 0.5s ease, box-shadow 0.4s ease;
+}
+
+.pl-card[data-on="0"] .pl-print {
+    transform: scale(0.9);
+    filter: saturate(0.75) brightness(0.9);
+    opacity: 0.85;
+}
+
+.pl-card[data-on="1"] .pl-print {
+    transform: scale(1.04);
+    filter: saturate(1.05) brightness(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45), 0 28px 48px -10px rgba(175, 128, 77, 0.35);
+}
+
+/* Photo shot square container */
+.pl-shot {
+    position: relative;
+    aspect-ratio: 1;
+    overflow: hidden;
+    background: #1e1d20;
+    border-radius: 2px;
+}
+
+.pl-shot img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+    transition: transform 0.6s ease;
+}
+
+.pl-card[data-on="1"]:hover .pl-shot img {
+    transform: scale(1.05);
+}
+
+/* Badge on polaroid corner */
+.pl-badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(18, 17, 19, 0.85);
+    color: #af804d;
+    border: 1px solid rgba(175, 128, 77, 0.5);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 2;
+}
+
+/* Handwritten title note under photo */
+.pl-note {
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 8px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.2;
+    color: #1a181b;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    letter-spacing: 0.2px;
+}
+
+/* Wooden Peg (jepitan jemuran kayu vintage) */
+.pl-peg {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 12px;
+    height: 30px;
+    margin-left: -6px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #b88a58 0%, #dfc29c 45%, #a87948 100%);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    z-index: 3;
+}
+
+.pl-peg::after {
+    content: '';
+    position: absolute;
+    left: 4.5px;
+    top: 9px;
+    width: 3px;
+    height: 9px;
+    background: #6a533b;
+    border-radius: 1px;
+    box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.8);
+}
+
+/* Bottom info & navigation bar */
+.pl-bar {
+    position: absolute;
+    left: clamp(20px, 5vw, 60px);
+    right: clamp(20px, 5vw, 60px);
+    bottom: clamp(20px, 4vh, 36px);
+    display: flex;
+    align-items: center;
+    gap: clamp(14px, 2.5vw, 28px);
+    cursor: default;
+    z-index: 10;
+    background: rgba(18, 17, 19, 0.85);
+    padding: 14px 22px;
+    border-radius: 1rem;
+    border: 1px solid rgba(175, 128, 77, 0.3);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+.pl-cap {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.pl-title {
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: clamp(20px, 2.4vw, 28px);
+    line-height: 1.15;
+    color: #af804d;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    animation: pl-in 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.pl-sub {
+    display: block;
+    margin-top: 4px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #cbd5e1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    animation: pl-in 0.45s 0.05s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+/* Booking CTA button in bar */
+.pl-book-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: #af804d;
+    color: #121113 !important;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 13.5px;
+    padding: 9px 18px;
+    border-radius: 0.6rem;
+    text-decoration: none !important;
+    white-space: nowrap;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 12px rgba(175, 128, 77, 0.35);
+}
+
+.pl-book-cta:hover {
+    background: #c99a64;
+    color: #121113 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(175, 128, 77, 0.5);
+}
+
+/* Counter 01 / 06 */
+.pl-count {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    color: #8a7f72;
+    white-space: nowrap;
+}
+
+.pl-count b {
+    color: #af804d;
+    font-weight: 700;
+}
+
+/* Navigation buttons (Prev / Next) */
+.pl-nav-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pl-btn {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(175, 128, 77, 0.4);
+    background: rgba(255, 255, 255, 0.04);
+    color: #fbfaf7;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.pl-btn:hover {
+    background: #af804d;
+    color: #121113;
+    border-color: #af804d;
+    transform: scale(1.08);
+}
+
+.pl-btn:active {
+    transform: scale(0.95);
+}
+
+.pl-btn:focus-visible {
+    outline: 2px solid #af804d;
+    outline-offset: 2px;
+}
+
+@keyframes pl-in {
+    from {
+        transform: translateY(12px);
+        opacity: 0;
+    }
+    to {
+        transform: none;
+        opacity: 1;
+    }
+}
+
+/* Responsiveness */
+@media (max-width: 992px) {
+    .pl-root {
+        height: 580px;
+        --pl-cw: 250px;
+    }
+    .pl-book-cta {
+        display: none; /* Saved space for mobile bar */
+    }
+}
+
+@media (max-width: 768px) {
+    .polaroid-carousel-container {
+        border-radius: 1rem;
+        margin: 20px 0 10px;
+    }
+    .pl-root {
+        height: 520px;
+        --pl-cw: 220px;
+    }
+    .pl-bar {
+        padding: 10px 14px;
+        gap: 12px;
+    }
+    .pl-title {
+        font-size: 18px;
+    }
+    .pl-sub {
+        font-size: 12px;
+    }
+    .pl-btn {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pl-cap > * {
+        animation: none;
+    }
+    .pl-print {
+        transition: none;
+    }
+}

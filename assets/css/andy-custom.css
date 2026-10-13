@@ -400,80 +400,288 @@
     color: #ffffff !important;
 }
 
-/* Header & Hero CTA Booking Button (Amber Hearth Design System: Radiant Amber #af804d + Outfit Font + 0.75rem Radius) */
-.header-btn-wa,
-.hero__btn .btn.btn-open-booking {
+/* ==========================================================================
+   Header CTA Booking Button (Twin Diagonal Shutter)
+   ========================================================================== */
+.header-btn-wa {
+    --blade: #121113;
+    --on-blade: #ffffff;
+    position: relative !important;
+    isolation: isolate !important;
+    overflow: hidden !important;
     background: #af804d !important;
     color: #121113 !important;
-    border: 1px solid rgba(175, 128, 77, 0.5) !important;
+    border: 1.5px solid #af804d !important;
     font-family: 'Outfit', sans-serif !important;
-    font-weight: 600 !important;
-    font-size: 15px;
+    font-weight: 700 !important;
+    font-size: 15px !important;
+    line-height: 1 !important;
     letter-spacing: 0.3px;
     padding: 12px 24px !important;
     border-radius: 0.75rem !important;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 14px rgba(175, 128, 77, 0.3);
-    cursor: pointer;
-    text-transform: none;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    box-shadow: 0 4px 14px rgba(175, 128, 77, 0.35) !important;
+    cursor: pointer !important;
+    text-transform: none !important;
+    text-decoration: none !important;
+    transition: color 0.3s 0.1s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.3s ease,
+                box-shadow 0.3s ease,
+                transform 0.25s ease !important;
 }
 
-.header-btn-wa i,
-.hero__btn .btn.btn-open-booking i {
+.header-btn-wa span,
+.header-btn-wa i {
+    position: relative !important;
+    z-index: 2 !important;
     color: #121113 !important;
-    transition: transform 0.25s ease;
+    display: inline-flex !important;
+    align-items: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1 !important;
+    transition: color 0.3s 0.08s ease, transform 0.25s ease !important;
 }
 
-/* Hover state: Elevated Radiant Amber Glow (Amber Hearth Harmony — Segar, Luminous, Bebas Cokelat!) */
+.header-btn-wa::before,
+.header-btn-wa::after {
+    content: "" !important;
+    position: absolute !important;
+    top: -30% !important;
+    height: 160% !important;
+    width: 75% !important;
+    background: var(--blade) !important;
+    transform: skewX(-18deg) scaleX(0) !important;
+    transition: transform 0.4s cubic-bezier(0.5, 0, 0.2, 1) !important;
+    z-index: 1 !important;
+    border-radius: 0 !important;
+}
+
+.header-btn-wa::before {
+    left: -20% !important;
+    transform-origin: left !important;
+}
+
+.header-btn-wa::after {
+    right: -20% !important;
+    transform-origin: right !important;
+}
+
 .header-btn-wa:hover,
-.hero__btn .btn.btn-open-booking:hover {
-    background: #c49362 !important;
-    border-color: #c49362 !important;
-    color: #121113 !important;
-    box-shadow: 0 8px 24px rgba(175, 128, 77, 0.45), 0 0 16px rgba(196, 147, 98, 0.35);
-    transform: translateY(-2px);
+.header-btn-wa:focus-visible {
+    color: var(--on-blade) !important;
+    border-color: #121113 !important;
+    box-shadow: 0 8px 24px rgba(18, 17, 19, 0.5), 0 0 16px rgba(175, 128, 77, 0.3) !important;
+    transform: translateY(-2px) !important;
 }
 
-.header-btn-wa:hover i,
-.hero__btn .btn.btn-open-booking:hover i {
-    color: #121113 !important;
+.header-btn-wa:hover span,
+.header-btn-wa:hover i {
+    color: var(--on-blade) !important;
+}
+
+.header-btn-wa:hover i {
     transform: scale(1.1);
 }
 
-.header-btn-wa:active,
-.hero__btn .btn.btn-open-booking:active {
-    transform: translateY(0);
-    box-shadow: 0 3px 10px rgba(175, 128, 77, 0.3);
+.header-btn-wa:hover::before,
+.header-btn-wa:focus-visible::before,
+.header-btn-wa:hover::after,
+.header-btn-wa:focus-visible::after {
+    transform: skewX(-18deg) scaleX(1) !important;
 }
 
-.header-btn-wa:focus,
-.hero__btn .btn.btn-open-booking:focus {
-    outline: 2px solid #af804d;
-    outline-offset: 2px;
+.header-btn-wa:active {
+    transform: translateY(0) !important;
 }
 
-/* Secondary outline button in Hero (Amber Hearth Secondary: Sage Steel #5f8787) */
-.hero__btn .btn:not(.btn-open-booking) {
-    background: rgba(95, 135, 135, 0.12) !important;
-    border: 1.5px solid #5f8787 !important;
-    color: #ffffff !important;
-    font-family: 'Outfit', sans-serif !important;
-    font-weight: 500 !important;
+/* ==========================================================================
+   Hero CTA Buttons (Matched Size, Twin Diagonal Shutter)
+   ========================================================================== */
+.hero__btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 16px !important;
+    margin-top: 10px;
+}
+
+/* Base styling for BOTH hero buttons — strictly identical size & shape */
+.hero__btn .btn {
+    height: 50px !important;
+    min-height: 50px !important;
+    min-width: 215px !important;
+    padding: 0 24px !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    vertical-align: middle !important;
+    position: relative !important;
+    isolation: isolate !important;
+    overflow: hidden !important;
     border-radius: 0.75rem !important;
-    padding: 12px 24px !important;
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: 'Outfit', sans-serif !important;
+    font-size: 15px !important;
+    line-height: 1 !important;
+    letter-spacing: 0.3px;
+    cursor: pointer !important;
+    text-transform: none !important;
+    text-decoration: none !important;
+    transition: color 0.3s 0.1s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.3s ease,
+                box-shadow 0.3s ease,
+                transform 0.25s ease !important;
 }
 
-.hero__btn .btn:not(.btn-open-booking):hover {
-    background: #5f8787 !important;
-    border-color: #5f8787 !important;
-    color: #ffffff !important;
-    box-shadow: 0 6px 20px rgba(95, 135, 135, 0.35);
-    transform: translateY(-2px);
+/* Reset inner span & icon: override base theme's .slider-area .hero__caption span */
+.slider-area .hero__caption .hero__btn span,
+.slider-area .hero__caption .hero__btn .btn span,
+.hero__btn .btn span {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    margin: 0 !important;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+    font-family: 'Outfit', sans-serif !important;
+    font-size: 15px !important;
+    line-height: 1 !important;
+    letter-spacing: 0.3px !important;
+    text-transform: none !important;
+    white-space: nowrap !important;
+    overflow: visible !important;
+    position: relative !important;
+    z-index: 2 !important;
+    transition: color 0.3s 0.08s ease, transform 0.25s ease !important;
 }
+
+.slider-area .hero__caption .hero__btn i,
+.slider-area .hero__caption .hero__btn .btn i,
+.hero__btn .btn i {
+    display: inline-block !important;
+    font-size: 15px !important;
+    line-height: 1 !important;
+    margin: 0 !important;
+    position: relative !important;
+    z-index: 2 !important;
+    transition: color 0.3s 0.08s ease, transform 0.25s ease !important;
+}
+
+/* Twin shutter blades shared geometry for both hero buttons */
+.hero__btn .btn::before,
+.hero__btn .btn::after {
+    content: "" !important;
+    position: absolute !important;
+    top: -30% !important;
+    height: 160% !important;
+    width: 75% !important;
+    background: var(--blade) !important;
+    transform: skewX(-18deg) scaleX(0) !important;
+    transition: transform 0.4s cubic-bezier(0.5, 0, 0.2, 1) !important;
+    z-index: 1 !important;
+    border-radius: 0 !important;
+}
+
+.hero__btn .btn::before {
+    left: -20% !important;
+    transform-origin: left !important;
+}
+
+.hero__btn .btn::after {
+    right: -20% !important;
+    transform-origin: right !important;
+}
+
+.hero__btn .btn:hover::before,
+.hero__btn .btn:focus-visible::before,
+.hero__btn .btn:hover::after,
+.hero__btn .btn:focus-visible::after {
+    transform: skewX(-18deg) scaleX(1) !important;
+}
+
+.hero__btn .btn:hover {
+    transform: translateY(-2px) !important;
+}
+
+.hero__btn .btn:hover i {
+    transform: scale(1.1);
+}
+
+.hero__btn .btn:active {
+    transform: translateY(0) !important;
+}
+
+/* --- Hero Button 1: Primary CTA (Booking Antrean) --- */
+.hero__btn .btn.btn-open-booking {
+    --blade: #121113;
+    --on-blade: #ffffff;
+    background: #af804d !important;
+    color: #121113 !important;
+    border: 1.5px solid #af804d !important;
+    font-weight: 700 !important;
+    box-shadow: 0 4px 14px rgba(175, 128, 77, 0.35) !important;
+}
+
+.hero__btn .btn.btn-open-booking span,
+.hero__btn .btn.btn-open-booking i {
+    color: #121113 !important;
+}
+
+.hero__btn .btn.btn-open-booking:hover,
+.hero__btn .btn.btn-open-booking:focus-visible {
+    color: var(--on-blade) !important;
+    border-color: #121113 !important;
+    box-shadow: 0 8px 24px rgba(18, 17, 19, 0.5), 0 0 16px rgba(175, 128, 77, 0.3) !important;
+}
+
+.hero__btn .btn.btn-open-booking:hover span,
+.hero__btn .btn.btn-open-booking:hover i {
+    color: var(--on-blade) !important;
+}
+
+/* --- Hero Button 2: Secondary CTA (Lihat Layanan / Cek Jam Buka) --- */
+.hero__btn .btn.btn-hero-secondary,
+.hero__btn .btn:not(.btn-open-booking) {
+    --blade: #af804d;
+    --on-blade: #121113;
+    background: rgba(18, 17, 19, 0.75) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    border: 1.5px solid #af804d !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35) !important;
+}
+
+.hero__btn .btn.btn-hero-secondary span,
+.hero__btn .btn.btn-hero-secondary i,
+.hero__btn .btn:not(.btn-open-booking) span,
+.hero__btn .btn:not(.btn-open-booking) i {
+    color: #ffffff !important;
+}
+
+.hero__btn .btn.btn-hero-secondary:hover,
+.hero__btn .btn.btn-hero-secondary:focus-visible,
+.hero__btn .btn:not(.btn-open-booking):hover,
+.hero__btn .btn:not(.btn-open-booking):focus-visible {
+    color: var(--on-blade) !important;
+    border-color: #af804d !important;
+    box-shadow: 0 8px 24px rgba(175, 128, 77, 0.45) !important;
+}
+
+.hero__btn .btn.btn-hero-secondary:hover span,
+.hero__btn .btn.btn-hero-secondary:hover i,
+.hero__btn .btn:not(.btn-open-booking):hover span,
+.hero__btn .btn:not(.btn-open-booking):hover i {
+    color: var(--on-blade) !important;
+}
+
 
 /* Hero Stroke Text — reposition to bottom of slider */
 .slider-area .stock-text {
@@ -556,18 +764,30 @@
     white-space: nowrap;
 }
 
-/* Schedule Table (Amber Hearth Dark Card #121212 & Border #222222) */
+/* Schedule Table & Equal Sized Cards (Clean Light Theme & Gold Accent) */
 .schedule-card {
-    background: #121212;
-    border: 1px solid #222222;
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
     border-radius: 0.75rem;
     padding: 30px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.schedule-card:hover {
+    border-color: #af804d !important;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08) !important;
 }
 
 .schedule-table {
     width: 100%;
     margin-top: 15px;
+    flex: 1 1 auto;
 }
 
 .schedule-row {
@@ -575,11 +795,15 @@
     justify-content: space-between;
     align-items: center;
     padding: 12px 16px;
-    border-bottom: 1px solid #222222;
-    color: #c1c1c1;
+    border-bottom: 1px solid #f1f5f9;
+    color: #334155;
     font-size: 15px;
     border-radius: 0.5rem;
     transition: background 0.2s ease;
+}
+
+.schedule-row:hover {
+    background: #f8fafc;
 }
 
 .schedule-row:last-child {
@@ -587,15 +811,15 @@
 }
 
 .schedule-row.today-highlight {
-    background: rgba(175, 128, 77, 0.12);
-    border: 1px solid #af804d;
-    color: #ffffff;
+    background: rgba(175, 128, 77, 0.1) !important;
+    border: 1px solid #af804d !important;
+    color: #0f172a !important;
     font-weight: 700;
 }
 
 .today-tag {
     background: #af804d;
-    color: #121113;
+    color: #ffffff;
     font-size: 11px;
     font-weight: 800;
     padding: 2px 8px;
@@ -616,15 +840,15 @@
 }
 
 .live-status-open {
-    background: rgba(95, 135, 135, 0.2);
-    color: #6ee7b7;
-    border: 1px solid #059669;
+    background: rgba(16, 185, 129, 0.12);
+    color: #059669;
+    border: 1px solid rgba(16, 185, 129, 0.3);
 }
 
 .live-status-closed {
-    background: rgba(239, 68, 68, 0.2);
-    color: #f87171;
-    border: 1px solid #ef4444;
+    background: rgba(239, 68, 68, 0.1);
+    color: #dc2626;
+    border: 1px solid rgba(239, 68, 68, 0.3);
 }
 
 .status-dot {
@@ -748,8 +972,19 @@
     display: block !important;
 }
 
-/* Tombol Pilih Layanan: Lebar & tinggi identik di seluruh kartu */
+/* ==========================================================
+   BUTTON HOVER EFFECT: DIAGONAL SHUTTER (CodeFronts Adaptation)
+   Amber Hearth Design System: Radiant Amber #af804d + Obsidian #121113
+   ========================================================== */
+
+/* Single Diagonal Shutter (Varian A - untuk Kartu Layanan) */
+.btn-shutter-single,
 .service-area .services-caption .btn-choose-service {
+    --blade: #af804d;
+    --on-blade: #121113;
+    position: relative !important;
+    isolation: isolate !important;
+    overflow: hidden !important;
     margin-top: 0 !important;
     padding: 0 20px !important;
     height: 42px !important;
@@ -762,21 +997,185 @@
     border: 1.5px solid #af804d !important;
     color: #af804d !important;
     border-radius: 0.75rem !important;
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
     cursor: pointer !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
+    gap: 6px !important;
     margin-left: auto !important;
     margin-right: auto !important;
     box-sizing: border-box !important;
+    text-decoration: none !important;
+    text-transform: none !important;
+    transition: color 0.3s 0.1s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.3s ease,
+                box-shadow 0.3s ease,
+                transform 0.25s ease !important;
 }
 
-.service-area .services-caption .btn-choose-service:hover {
+/* Memastikan teks dan ikon selalu berada di atas bilah shutter */
+.btn-shutter-single span,
+.btn-shutter-single i,
+.service-area .services-caption .btn-choose-service span,
+.service-area .services-caption .btn-choose-service i {
+    position: relative !important;
+    z-index: 2 !important;
+    transition: color 0.3s 0.08s ease, transform 0.25s ease !important;
+}
+
+/* Bilah Diagonal Shutter Single */
+.btn-shutter-single::before,
+.service-area .services-caption .btn-choose-service::before {
+    content: "" !important;
+    position: absolute !important;
+    top: -25% !important;
+    left: -25% !important;
+    width: 150% !important;
+    height: 150% !important;
+    background: var(--blade) !important;
+    transform: skewX(-20deg) scaleX(0) !important;
+    transform-origin: center !important;
+    transition: transform 0.45s cubic-bezier(0.5, 0, 0.2, 1) !important;
+    z-index: 1 !important;
+    border-radius: 0 !important;
+}
+
+/* Hover & Focus State */
+.btn-shutter-single:hover,
+.btn-shutter-single:focus-visible,
+.service-area .services-caption .btn-choose-service:hover,
+.service-area .services-caption .btn-choose-service:focus-visible {
+    color: var(--on-blade) !important;
+    border-color: #af804d !important;
+    box-shadow: 0 6px 20px rgba(175, 128, 77, 0.4) !important;
+    transform: translateY(-2px) !important;
+}
+
+.btn-shutter-single:hover span,
+.btn-shutter-single:hover i,
+.service-area .services-caption .btn-choose-service:hover span,
+.service-area .services-caption .btn-choose-service:hover i {
+    color: var(--on-blade) !important;
+}
+
+.btn-shutter-single:hover::before,
+.btn-shutter-single:focus-visible::before,
+.service-area .services-caption .btn-choose-service:hover::before,
+.service-area .services-caption .btn-choose-service:focus-visible::before {
+    transform: skewX(-20deg) scaleX(1) !important;
+}
+
+/* Twin Diagonal Shutter (Varian B - Rana Ganda dari Kiri dan Kanan) */
+.btn-shutter-twin {
+    --blade: #af804d;
+    --on-blade: #121113;
+    position: relative !important;
+    isolation: isolate !important;
+    overflow: hidden !important;
+    background: transparent !important;
+    color: #af804d !important;
+    border: 1.5px solid #af804d !important;
+    border-radius: 0.75rem !important;
+    font-family: 'Outfit', sans-serif !important;
+    font-weight: 700 !important;
+    padding: 14px 28px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    cursor: pointer !important;
+    text-decoration: none !important;
+    text-transform: none !important;
+    transition: color 0.3s 0.1s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.3s ease,
+                box-shadow 0.3s ease,
+                transform 0.25s ease !important;
+}
+
+.btn-shutter-twin span,
+.btn-shutter-twin i {
+    position: relative !important;
+    z-index: 2 !important;
+    transition: color 0.3s 0.08s ease, transform 0.25s ease !important;
+}
+
+.btn-shutter-twin::before,
+.btn-shutter-twin::after {
+    content: "" !important;
+    position: absolute !important;
+    top: -30% !important;
+    height: 160% !important;
+    width: 75% !important;
+    background: var(--blade) !important;
+    transform: skewX(-18deg) scaleX(0) !important;
+    transition: transform 0.4s cubic-bezier(0.5, 0, 0.2, 1) !important;
+    z-index: 1 !important;
+    border-radius: 0 !important;
+}
+
+.btn-shutter-twin::before {
+    left: -20% !important;
+    transform-origin: left !important;
+}
+
+.btn-shutter-twin::after {
+    right: -20% !important;
+    transform-origin: right !important;
+}
+
+.btn-shutter-twin:hover,
+.btn-shutter-twin:focus-visible {
+    color: var(--on-blade) !important;
+    border-color: #af804d !important;
+    box-shadow: 0 8px 24px rgba(175, 128, 77, 0.45) !important;
+    transform: translateY(-2px) !important;
+}
+
+.btn-shutter-twin:hover span,
+.btn-shutter-twin:hover i {
+    color: var(--on-blade) !important;
+}
+
+.btn-shutter-twin:hover::before,
+.btn-shutter-twin:focus-visible::before,
+.btn-shutter-twin:hover::after,
+.btn-shutter-twin:focus-visible::after {
+    transform: skewX(-18deg) scaleX(1) !important;
+}
+
+/* Varian Solid / Primary untuk Twin Shutter */
+.btn-shutter-twin.btn-shutter-primary {
+    --blade: #121113;
+    --on-blade: #ffffff;
     background: #af804d !important;
     color: #121113 !important;
+    border: 1.5px solid #af804d !important;
     box-shadow: 0 4px 15px rgba(175, 128, 77, 0.35) !important;
-    transform: translateY(-2px) !important;
+}
+
+.btn-shutter-twin.btn-shutter-primary:hover,
+.btn-shutter-twin.btn-shutter-primary:focus-visible {
+    color: #ffffff !important;
+    border-color: #121113 !important;
+    box-shadow: 0 8px 24px rgba(18, 17, 19, 0.4) !important;
+}
+
+.btn-shutter-twin.btn-shutter-primary:hover span,
+.btn-shutter-twin.btn-shutter-primary:hover i {
+    color: #ffffff !important;
+}
+
+/* Aksesibilitas Prefers-Reduced-Motion */
+@media (prefers-reduced-motion: reduce) {
+    .btn-shutter-single,
+    .btn-shutter-single::before,
+    .btn-shutter-twin,
+    .btn-shutter-twin::before,
+    .btn-shutter-twin::after,
+    .service-area .services-caption .btn-choose-service,
+    .service-area .services-caption .btn-choose-service::before {
+        transition: color 0.2s ease, background-color 0.2s ease !important;
+    }
 }
 
 /* Penyesuaian Responsif Layar Laptop (992px - 1199px) */
@@ -876,14 +1275,73 @@
     font-size: 20px;
 }
 
+/* Modal Close Button (Amber Hearth Circular Icon) */
+.andy-modal .modal-header .close,
 .andy-modal .close {
+    color: #cbd5e1 !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(175, 128, 77, 0.35) !important;
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 50% !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    margin: -6px -4px -6px auto !important;
+    font-size: 22px !important;
+    line-height: 1 !important;
+    opacity: 0.9 !important;
+    text-shadow: none !important;
+    cursor: pointer !important;
+    transition: all 0.25s ease !important;
+    outline: none !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4) !important;
+}
+
+.andy-modal .modal-header .close span,
+.andy-modal .close span {
+    color: inherit !important;
+    line-height: 1 !important;
+    display: block !important;
+    margin-top: -2px !important;
+    transition: color 0.2s ease !important;
+}
+
+.andy-modal .modal-header .close:hover,
+.andy-modal .modal-header .close:focus,
+.andy-modal .modal-header .close:active,
+.andy-modal .close:hover,
+.andy-modal .close:focus,
+.andy-modal .close:active,
+.andy-modal .close:not(:disabled):not(.disabled):hover,
+.andy-modal .close:not(:disabled):not(.disabled):focus,
+.andy-modal .close:not(:disabled):not(.disabled):active {
+    color: #121113 !important;
+    background: #af804d !important;
+    border-color: #af804d !important;
+    opacity: 1 !important;
+    transform: rotate(90deg) scale(1.08) !important;
+    box-shadow: 0 0 16px rgba(175, 128, 77, 0.6) !important;
+    text-decoration: none !important;
+    outline: none !important;
+}
+
+.andy-modal .modal-header .close:hover span,
+.andy-modal .modal-header .close:focus span,
+.andy-modal .close:hover span,
+.andy-modal .close:focus span {
+    color: #121113 !important;
+}
+
+.andy-modal .close-old {
     color: #ffffff;
     opacity: 0.8;
     text-shadow: none;
     font-size: 28px;
 }
 
-.andy-modal .close:hover {
+.andy-modal .close-old:hover {
     color: #af804d;
     opacity: 1;
 }
@@ -916,39 +1374,94 @@
 }
 
 .andy-modal .btn-submit-wa {
-    background: #af804d;
-    color: #121113;
-    border: none;
-    font-family: 'Outfit', sans-serif;
-    font-weight: 700;
-    padding: 12px 20px;
-    border-radius: 0.75rem;
-    width: 100%;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 15px rgba(175, 128, 77, 0.35);
-    cursor: pointer;
+    --blade: #121113;
+    --on-blade: #ffffff;
+    position: relative !important;
+    isolation: isolate !important;
+    overflow: hidden !important;
+    background: #af804d !important;
+    color: #121113 !important;
+    border: 1.5px solid #af804d !important;
+    font-family: 'Outfit', sans-serif !important;
+    font-weight: 700 !important;
+    padding: 12px 20px !important;
+    border-radius: 0.75rem !important;
+    width: 100% !important;
+    font-size: 16px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    cursor: pointer !important;
+    box-shadow: 0 4px 15px rgba(175, 128, 77, 0.35) !important;
+    transition: color 0.3s 0.1s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.3s ease,
+                box-shadow 0.3s ease,
+                transform 0.25s ease !important;
 }
 
-.andy-modal .btn-submit-wa:hover {
-    background: #c49362;
-    color: #121113;
-    box-shadow: 0 8px 25px rgba(175, 128, 77, 0.45);
-    transform: translateY(-2px);
+.andy-modal .btn-submit-wa span,
+.andy-modal .btn-submit-wa i {
+    position: relative !important;
+    z-index: 2 !important;
+    color: #121113 !important;
+    transition: color 0.3s 0.08s ease, transform 0.25s ease !important;
 }
 
-/* Map Iframe Styling */
+.andy-modal .btn-submit-wa::before,
+.andy-modal .btn-submit-wa::after {
+    content: "" !important;
+    position: absolute !important;
+    top: -30% !important;
+    height: 160% !important;
+    width: 75% !important;
+    background: var(--blade) !important;
+    transform: skewX(-18deg) scaleX(0) !important;
+    transition: transform 0.4s cubic-bezier(0.5, 0, 0.2, 1) !important;
+    z-index: 1 !important;
+    border-radius: 0 !important;
+}
+
+.andy-modal .btn-submit-wa::before {
+    left: -20% !important;
+    transform-origin: left !important;
+}
+
+.andy-modal .btn-submit-wa::after {
+    right: -20% !important;
+    transform-origin: right !important;
+}
+
+.andy-modal .btn-submit-wa:hover,
+.andy-modal .btn-submit-wa:focus-visible {
+    color: var(--on-blade) !important;
+    border-color: #121113 !important;
+    box-shadow: 0 8px 25px rgba(18, 17, 19, 0.6) !important;
+    transform: translateY(-2px) !important;
+}
+
+.andy-modal .btn-submit-wa:hover span,
+.andy-modal .btn-submit-wa:hover i {
+    color: var(--on-blade) !important;
+}
+
+.andy-modal .btn-submit-wa:hover::before,
+.andy-modal .btn-submit-wa:focus-visible::before,
+.andy-modal .btn-submit-wa:hover::after,
+.andy-modal .btn-submit-wa:focus-visible::after {
+    transform: skewX(-18deg) scaleX(1) !important;
+}
+
+/* Map Iframe Styling (Flex-grow to match Schedule Card height) */
 .map-responsive {
     overflow: hidden;
-    padding-bottom: 50%;
     position: relative;
-    height: 0;
     border-radius: 0.75rem;
-    border: 1px solid #222222;
+    border: 1px solid #e2e8f0;
+    flex: 1 1 auto;
+    min-height: 320px;
+    height: 100%;
+    width: 100%;
 }
 
 .map-responsive iframe {
@@ -962,7 +1475,7 @@
 
 @media (max-width: 768px) {
     .map-responsive {
-        padding-bottom: 85%;
+        min-height: 280px;
     }
 }
 
@@ -1016,12 +1529,15 @@
         font-size: 14px !important;
     }
     .hero__btn {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
     }
     .hero__btn .btn {
-        width: 100%;
+        width: 100% !important;
+        min-width: 100% !important;
+        height: 50px !important;
+        min-height: 50px !important;
         text-align: center;
         margin-right: 0 !important;
     }
@@ -1314,6 +1830,11 @@
 }
 
 .btn-booking-mobile {
+    --blade: #121113;
+    --on-blade: #ffffff;
+    position: relative !important;
+    isolation: isolate !important;
+    overflow: hidden !important;
     background: #af804d !important;
     color: #121113 !important;
     font-family: 'Outfit', sans-serif !important;
@@ -1321,23 +1842,76 @@
     font-weight: 700 !important;
     padding: 10px 16px !important;
     border-radius: 0.75rem !important;
-    border: none !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
+    border: 1.5px solid #af804d !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
     text-decoration: none !important;
     box-shadow: 0 4px 15px rgba(175, 128, 77, 0.35) !important;
-    width: 100%;
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100% !important;
+    cursor: pointer !important;
+    transition: color 0.3s 0.1s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.3s ease,
+                box-shadow 0.3s ease,
+                transform 0.25s ease !important;
+}
+
+.btn-booking-mobile span,
+.btn-booking-mobile i {
+    position: relative !important;
+    z-index: 2 !important;
+    color: #121113 !important;
+    transition: color 0.3s 0.08s ease, transform 0.25s ease !important;
+}
+
+.btn-booking-mobile::before,
+.btn-booking-mobile::after {
+    content: "" !important;
+    position: absolute !important;
+    top: -30% !important;
+    height: 160% !important;
+    width: 75% !important;
+    background: var(--blade) !important;
+    transform: skewX(-18deg) scaleX(0) !important;
+    transition: transform 0.4s cubic-bezier(0.5, 0, 0.2, 1) !important;
+    z-index: 1 !important;
+    border-radius: 0 !important;
+}
+
+.btn-booking-mobile::before {
+    left: -20% !important;
+    transform-origin: left !important;
+}
+
+.btn-booking-mobile::after {
+    right: -20% !important;
+    transform-origin: right !important;
 }
 
 .btn-booking-mobile:hover,
+.btn-booking-mobile:focus-visible,
 .btn-booking-mobile:active {
-    background: #c49362 !important;
-    color: #121113 !important;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(175, 128, 77, 0.45) !important;
+    color: var(--on-blade) !important;
+    border-color: #121113 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(18, 17, 19, 0.5) !important;
+}
+
+.btn-booking-mobile:hover span,
+.btn-booking-mobile:hover i,
+.btn-booking-mobile:active span,
+.btn-booking-mobile:active i {
+    color: var(--on-blade) !important;
+}
+
+.btn-booking-mobile:hover::before,
+.btn-booking-mobile:focus-visible::before,
+.btn-booking-mobile:hover::after,
+.btn-booking-mobile:focus-visible::after,
+.btn-booking-mobile:active::before,
+.btn-booking-mobile:active::after {
+    transform: skewX(-18deg) scaleX(1) !important;
 }
 
 /* ==========================================
@@ -1468,7 +2042,7 @@
         font-size: 13px !important;
         margin-top: 0 !important;
         border-radius: 0.75rem !important;
-        background: rgba(175, 128, 77, 0.12) !important;
+        background: transparent !important;
         border: 1.5px solid #af804d !important;
         color: #af804d !important;
         display: inline-flex !important;
@@ -1497,10 +2071,12 @@
 
 /* ==========================================
    TESTIMONIALS 3-COLUMN INFINITE MARQUEE
-   (Amber Hearth Theme: #121113, #af804d, #222222)
+   (Clean Light Aesthetic with Brand Accent #af804d)
    ========================================== */
 .testimonials-area {
-    background-color: #121113 !important;
+    background-color: #f8fafc !important;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
     overflow: hidden;
     position: relative;
     padding-top: 90px;
@@ -1509,7 +2085,7 @@
 
 .testimonials-badge {
     display: inline-block;
-    background: rgba(175, 128, 77, 0.12);
+    background: rgba(175, 128, 77, 0.1);
     color: #af804d;
     font-family: 'Outfit', sans-serif;
     font-size: 13px;
@@ -1518,7 +2094,7 @@
     letter-spacing: 1.5px;
     padding: 6px 18px;
     border-radius: 0.75rem;
-    border: 1px solid rgba(175, 128, 77, 0.35);
+    border: 1px solid rgba(175, 128, 77, 0.3);
     margin-bottom: 12px;
 }
 
@@ -1573,25 +2149,23 @@
     }
 }
 
-/* Amber Hearth Testimonial Card */
+/* Modern Clean Light Testimonial Card */
 .testimonial-card {
-    background: rgba(18, 18, 18, 0.95);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid #222222;
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
     border-radius: 0.75rem;
     padding: 24px 22px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     user-select: none;
 }
 
 .testimonial-card:hover {
-    border-color: #af804d;
-    background: rgba(26, 25, 28, 0.98);
+    border-color: #af804d !important;
+    background: #ffffff !important;
     transform: translateY(-4px);
-    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 20px rgba(175, 128, 77, 0.22);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08), 0 0 16px rgba(175, 128, 77, 0.15);
 }
 
 .testimonial-stars {
@@ -1603,16 +2177,16 @@
 .testimonial-badge {
     font-size: 11px;
     font-weight: 700;
-    color: #c1c1c1;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid #222222;
+    color: #475569;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
     border-radius: 0.5rem;
     padding: 3px 10px;
 }
 
 .testimonial-text {
     font-family: 'Outfit', sans-serif;
-    color: #c1c1c1;
+    color: #334155 !important;
     font-size: 14px;
     line-height: 1.65;
     margin-bottom: 0;
@@ -1624,21 +2198,21 @@
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid #af804d;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .author-meta .author-name {
     font-family: 'Outfit', sans-serif;
     font-weight: 700;
     font-size: 15px;
-    color: #ffffff;
+    color: #0f172a !important;
     line-height: 1.3;
 }
 
 .author-meta .author-role {
     font-family: 'Outfit', sans-serif;
     font-size: 12px;
-    color: #888888;
+    color: #64748b !important;
     line-height: 1.3;
 }
 
