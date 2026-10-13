@@ -18,9 +18,9 @@
 
 | Role | Hex | CSS Variable | Usage |
 |------|-----|--------------|-------|
-| Primary (Hearth Amber) | `#e78a53` | `--primary` | Main CTA button, active icons, highlights |
+| Primary (Hearth Amber) | `#af804d` | `--primary` | Main CTA button, active icons, highlights |
 | On Primary | `#121113` | `--primary-foreground` | High-contrast dark text on primary button |
-| Primary Hover | `#f09a67` | `--primary-hover` | Luminous amber glow (no brown/muddy tone) |
+| Primary Hover | `#c49362` | `--primary-hover` | Luminous amber glow (no brown/muddy tone) |
 | Secondary (Sage Steel) | `#5f8787` | `--secondary` | Secondary buttons, outline badges |
 | On Secondary | `#ffffff` | `--secondary-foreground` | White text on secondary elements |
 | Background | `#121113` | `--background` | Root canvas / dark background |
@@ -30,7 +30,7 @@
 | Muted | `#222222` | `--muted` | Subdued surface, dividers, input background |
 | Muted Foreground | `#888888` | `--muted-foreground` | Caption, metadata, copyright text |
 | Border | `#222222` | `--border` | Subtle contrast border on cards & inputs |
-| Ring / Focus | `#e78a53` | `--ring` | Accessibility focus ring |
+| Ring / Focus | `#af804d` | `--ring` | Accessibility focus ring |
 | Radius | `0.75rem` (12px) | `--radius` | Modern rounded shape for cards & buttons |
 
 **Theme Origin:** 21st.dev (`@serafimcloud/themes/amber-hearth`). Warm hearth embers on deep obsidian charcoal.
@@ -64,7 +64,7 @@
 | Level | Value | Usage |
 |-------|-------|-------|
 | `--shadow-sm` | `0 1px 2px rgba(0,0,0,0.3)` | Subtle lift |
-| `--shadow-md` | `0 4px 15px rgba(231,138,83,0.3)` | Primary Amber button glow |
+| `--shadow-md` | `0 4px 15px rgba(175,128,77,0.3)` | Primary Amber button glow |
 | `--shadow-lg` | `0 10px 30px rgba(0,0,0,0.5)` | Cards, schedule table |
 | `--shadow-xl` | `0 20px 50px rgba(0,0,0,0.8)` | Booking modal |
 
@@ -77,22 +77,22 @@
 ```css
 /* Primary Button (Amber Hearth CTA: "Booking Antrean") */
 .btn-primary, .header-btn-wa, .btn-open-booking {
-  background: #e78a53;
+  background: #af804d;
   color: #121113;
   font-family: 'Outfit', sans-serif;
   padding: 12px 24px;
   border-radius: 0.75rem;
   font-weight: 700;
-  box-shadow: 0 4px 15px rgba(231, 138, 83, 0.35);
+  box-shadow: 0 4px 15px rgba(175, 128, 77, 0.35);
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
 }
 
 .btn-primary:hover, .header-btn-wa:hover, .btn-open-booking:hover {
-  background: #f09a67;
+  background: #c49362;
   color: #121113;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(231, 138, 83, 0.45);
+  box-shadow: 0 8px 25px rgba(175, 128, 77, 0.45);
 }
 
 /* Secondary Button (Sage Steel) */
@@ -129,9 +129,9 @@
 }
 
 .card:hover {
-  border-color: #e78a53;
+  border-color: #af804d;
   transform: translateY(-3px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(231, 138, 83, 0.2);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(175, 128, 77, 0.2);
 }
 ```
 
@@ -149,9 +149,9 @@
 }
 
 .input:focus {
-  border-color: #e78a53;
+  border-color: #af804d;
   outline: none;
-  box-shadow: 0 0 0 3px rgba(231, 138, 83, 0.25);
+  box-shadow: 0 0 0 3px rgba(175, 128, 77, 0.25);
 }
 ```
 

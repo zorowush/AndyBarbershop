@@ -3,10 +3,10 @@
    Theme: Amber Hearth by @serafimcloud (21st.dev / shadcn/ui)
    Palette:
      Dark Hearth Background (#121113), Surface/Card (#121212)
-     Primary Flame (#e78a53, #d87943), Primary FG (#121113)
+     Primary Flame (#af804d, #966d3f), Primary FG (#121113)
      Secondary Sage Steel (#5f8787), Secondary FG (#ffffff)
-     Accent / Ring (#e78a53), Muted (#222222), Border (#222222)
-     Chart-3 Warm Peach Amber (#fbcb97)
+     Accent / Ring (#af804d), Muted (#222222), Border (#222222)
+     Chart-3 Warm Peach Amber (#d4b48a)
    Typography: Outfit (Headings, Buttons, Nav & Body)
    Radius: 0.75rem (12px)
    ========================================================================== */
@@ -21,7 +21,7 @@
     --card-foreground: #c1c1c1;
     --popover: #121113;
     --popover-foreground: #c1c1c1;
-    --primary: #e78a53;
+    --primary: #af804d;
     --primary-foreground: #121113;
     --secondary: #5f8787;
     --secondary-foreground: #ffffff;
@@ -33,11 +33,11 @@
     --destructive-foreground: #121113;
     --border: #222222;
     --input: #222222;
-    --ring: #e78a53;
+    --ring: #af804d;
     --radius: 0.75rem;
     --chart-1: #5f8787;
-    --chart-2: #e78a53;
-    --chart-3: #fbcb97;
+    --chart-2: #af804d;
+    --chart-3: #d4b48a;
     --chart-4: #888888;
     --chart-5: #999999;
     --font-sans: 'Outfit', ui-sans-serif, sans-serif, system-ui;
@@ -45,22 +45,22 @@
     --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 
     /* Semantic color mappings for Andy Barbershop */
-    --color-primary: #e78a53;
-    --color-primary-hover: #f09a67;
+    --color-primary: #af804d;
+    --color-primary-hover: #c49362;
     --color-on-primary: #121113;
     --color-secondary: #5f8787;
     --color-secondary-hover: #719b9b;
     --color-on-secondary: #ffffff;
-    --color-accent: #e78a53;
-    --color-accent-hover: #f09a67;
-    --color-accent-light: #fbcb97;
-    --color-accent-glow: rgba(231, 138, 83, 0.35);
+    --color-accent: #af804d;
+    --color-accent-hover: #c49362;
+    --color-accent-light: #d4b48a;
+    --color-accent-glow: rgba(175, 128, 77, 0.35);
     --color-on-accent: #121113;
     --color-bg-dark: #121113;
     --color-surface-dark: #121212;
     --color-surface-raised: #1a191b;
     --color-border: #222222;
-    --color-border-accent: rgba(231, 138, 83, 0.3);
+    --color-border-accent: rgba(175, 128, 77, 0.3);
     --font-heading: 'Outfit', sans-serif;
     --font-nav: 'Outfit', sans-serif;
     --font-body: 'Outfit', sans-serif;
@@ -79,13 +79,13 @@
     padding: 0 40px !important;
 }
 
-/* Sticky header: Amber Hearth dark obsidian (#121113) with radiant amber #e78a53 border */
+/* Sticky header: Amber Hearth dark obsidian (#121113) with radiant amber #af804d border */
 .header-sticky.sticky-bar {
     background: rgba(18, 17, 19, 0.96) !important;
-    border-bottom: 1px solid rgba(231, 138, 83, 0.25);
+    border-bottom: 1px solid rgba(175, 128, 77, 0.25);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 1px 0 rgba(231, 138, 83, 0.15);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 1px 0 rgba(175, 128, 77, 0.15);
 }
 
 /* Menu link styling: Outfit font, letter spacing & Amber Hearth hover */
@@ -99,22 +99,22 @@
     transition: color 0.25s ease;
 }
 
-/* Active & hover: Amber Hearth primary flame #e78a53 */
+/* Active & hover: Amber Hearth primary flame #af804d */
 .header-area .main-header .main-menu ul li.active > a,
 .header-area .main-header .main-menu ul li:hover > a {
-    color: #e78a53 !important;
+    color: #af804d !important;
 }
 
-/* Active/hover decorative lines: match Amber Hearth primary flame #e78a53 */
+/* Active/hover decorative lines: match Amber Hearth primary flame #af804d */
 .header-area .main-header .main-menu ul li a::before,
 .header-area .main-header .main-menu ul li a::after {
-    background: #e78a53 !important;
+    background: #af804d !important;
 }
 
 /* Submenu: dark theme with Amber Hearth border */
 .header-area .main-header .main-menu ul ul.submenu {
     background: rgba(18, 17, 19, 0.96) !important;
-    border: 1px solid rgba(231, 138, 83, 0.25);
+    border: 1px solid rgba(175, 128, 77, 0.25);
     backdrop-filter: blur(14px);
     border-radius: 0.75rem;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
@@ -126,8 +126,8 @@
 }
 
 .header-area .main-header .main-menu ul ul.submenu > li > a:hover {
-    color: #e78a53 !important;
-    background: rgba(231, 138, 83, 0.12) !important;
+    color: #af804d !important;
+    background: rgba(175, 128, 77, 0.12) !important;
 }
 
 /* Menu container: proper alignment */
@@ -156,15 +156,15 @@
     border-radius: 0.75rem;
     background: #ffffff;
     padding: 2px;
-    border: 1px solid rgba(231, 138, 83, 0.4);
+    border: 1px solid rgba(175, 128, 77, 0.4);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .logo:hover img {
     transform: scale(1.05);
-    border-color: #e78a53;
-    box-shadow: 0 6px 18px rgba(231, 138, 83, 0.35);
+    border-color: #af804d;
+    box-shadow: 0 6px 18px rgba(175, 128, 77, 0.35);
 }
 
 .footer-logo img {
@@ -174,7 +174,7 @@
     border-radius: 0.75rem;
     background: #ffffff;
     padding: 3px;
-    border: 1px solid rgba(231, 138, 83, 0.4);
+    border: 1px solid rgba(175, 128, 77, 0.4);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
@@ -182,10 +182,10 @@
     max-height: 90px;
     width: auto;
     border-radius: 0.75rem;
-    border: 2px solid #e78a53;
+    border: 2px solid #af804d;
     background: #ffffff;
     padding: 4px;
-    box-shadow: 0 8px 24px rgba(231, 138, 83, 0.35);
+    box-shadow: 0 8px 24px rgba(175, 128, 77, 0.35);
 }
 
 .logo-brand-text {
@@ -199,7 +199,7 @@
 }
 
 .logo-brand-text span {
-    color: #e78a53 !important;
+    color: #af804d !important;
     display: block;
     font-family: 'Outfit', sans-serif !important;
     font-size: 10px;
@@ -279,7 +279,7 @@
 .mobile_menu .slicknav_btn,
 .mobile_menu .slicknav_menu .slicknav_btn {
     background-color: rgba(18, 18, 18, 0.95) !important;
-    border: 1px solid rgba(231, 138, 83, 0.3) !important;
+    border: 1px solid rgba(175, 128, 77, 0.3) !important;
     border-radius: 0.75rem !important;
     width: 42px !important;
     height: 40px !important;
@@ -299,8 +299,8 @@
 .mobile_menu .slicknav_btn:hover,
 .mobile_menu .slicknav_btn.slicknav_open {
     background-color: #1a191b !important;
-    border-color: #e78a53 !important;
-    box-shadow: 0 0 15px rgba(231, 138, 83, 0.35) !important;
+    border-color: #af804d !important;
+    box-shadow: 0 0 15px rgba(175, 128, 77, 0.35) !important;
 }
 
 /* Hide default 3-bar span icons to ensure strictly clean icon-only button */
@@ -320,13 +320,13 @@
     padding: 0 !important;
     font-size: 20px !important;
     line-height: 1 !important;
-    color: #e78a53 !important;
+    color: #af804d !important;
     transition: transform 0.25s ease, color 0.25s ease !important;
 }
 
 .slicknav_btn:hover .slicknav_menutxt,
 .mobile_menu .slicknav_btn:hover .slicknav_menutxt {
-    color: #f09a67 !important;
+    color: #c49362 !important;
 }
 
 /* When open, icon morphs smoothly into close icon (fa-times) */
@@ -339,19 +339,19 @@
 
 .slicknav_btn.slicknav_open .slicknav_menutxt,
 .mobile_menu .slicknav_btn.slicknav_open .slicknav_menutxt {
-    color: #f09a67 !important;
+    color: #c49362 !important;
     transform: rotate(90deg);
 }
 
 .slicknav_icon-bar {
-    background-color: #e78a53 !important;
+    background-color: #af804d !important;
 }
 
 /* FIX: Ensure .slicknav_nav dropdown has solid dark background and high z-index */
 .mobile_menu .slicknav_menu .slicknav_nav,
 .slicknav_nav {
     background: #121113 !important;
-    border: 1px solid rgba(231, 138, 83, 0.25) !important;
+    border: 1px solid rgba(175, 128, 77, 0.25) !important;
     border-radius: 0.75rem !important;
     padding: 12px 8px !important;
     margin-top: 12px !important;
@@ -391,8 +391,8 @@
 .mobile_menu .slicknav_menu .slicknav_nav li.active > a,
 .slicknav_nav a:hover,
 .slicknav_nav li.active > a {
-    color: #e78a53 !important;
-    background: rgba(231, 138, 83, 0.12) !important;
+    color: #af804d !important;
+    background: rgba(175, 128, 77, 0.12) !important;
     padding-left: 22px !important;
 }
 
@@ -400,12 +400,12 @@
     color: #ffffff !important;
 }
 
-/* Header & Hero CTA Booking Button (Amber Hearth Design System: Radiant Amber #e78a53 + Outfit Font + 0.75rem Radius) */
+/* Header & Hero CTA Booking Button (Amber Hearth Design System: Radiant Amber #af804d + Outfit Font + 0.75rem Radius) */
 .header-btn-wa,
 .hero__btn .btn.btn-open-booking {
-    background: #e78a53 !important;
+    background: #af804d !important;
     color: #121113 !important;
-    border: 1px solid rgba(231, 138, 83, 0.5) !important;
+    border: 1px solid rgba(175, 128, 77, 0.5) !important;
     font-family: 'Outfit', sans-serif !important;
     font-weight: 600 !important;
     font-size: 15px;
@@ -416,7 +416,7 @@
     align-items: center;
     gap: 8px;
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 14px rgba(231, 138, 83, 0.3);
+    box-shadow: 0 4px 14px rgba(175, 128, 77, 0.3);
     cursor: pointer;
     text-transform: none;
 }
@@ -430,10 +430,10 @@
 /* Hover state: Elevated Radiant Amber Glow (Amber Hearth Harmony — Segar, Luminous, Bebas Cokelat!) */
 .header-btn-wa:hover,
 .hero__btn .btn.btn-open-booking:hover {
-    background: #f09a67 !important;
-    border-color: #f09a67 !important;
+    background: #c49362 !important;
+    border-color: #c49362 !important;
     color: #121113 !important;
-    box-shadow: 0 8px 24px rgba(231, 138, 83, 0.45), 0 0 16px rgba(240, 154, 103, 0.35);
+    box-shadow: 0 8px 24px rgba(175, 128, 77, 0.45), 0 0 16px rgba(196, 147, 98, 0.35);
     transform: translateY(-2px);
 }
 
@@ -446,12 +446,12 @@
 .header-btn-wa:active,
 .hero__btn .btn.btn-open-booking:active {
     transform: translateY(0);
-    box-shadow: 0 3px 10px rgba(231, 138, 83, 0.3);
+    box-shadow: 0 3px 10px rgba(175, 128, 77, 0.3);
 }
 
 .header-btn-wa:focus,
 .hero__btn .btn.btn-open-booking:focus {
-    outline: 2px solid #e78a53;
+    outline: 2px solid #af804d;
     outline-offset: 2px;
 }
 
@@ -518,7 +518,7 @@
     align-items: center;
     gap: 10px;
     background: rgba(18, 17, 19, 0.9);
-    border: 1px solid rgba(231, 138, 83, 0.35);
+    border: 1px solid rgba(175, 128, 77, 0.35);
     padding: 7px 16px 7px 12px;
     border-radius: 50px;
     margin-bottom: 22px;
@@ -530,7 +530,7 @@
 }
 
 .rating-badge .stars {
-    color: #e78a53;
+    color: #af804d;
     font-size: 13px;
     display: inline-flex;
     align-items: center;
@@ -551,7 +551,7 @@
     font-size: 12px;
     font-weight: 500;
     line-height: 1;
-    border-left: 1px solid rgba(231, 138, 83, 0.3);
+    border-left: 1px solid rgba(175, 128, 77, 0.3);
     padding-left: 10px;
     white-space: nowrap;
 }
@@ -587,14 +587,14 @@
 }
 
 .schedule-row.today-highlight {
-    background: rgba(231, 138, 83, 0.12);
-    border: 1px solid #e78a53;
+    background: rgba(175, 128, 77, 0.12);
+    border: 1px solid #af804d;
     color: #ffffff;
     font-weight: 700;
 }
 
 .today-tag {
-    background: #e78a53;
+    background: #af804d;
     color: #121113;
     font-size: 11px;
     font-weight: 800;
@@ -741,7 +741,7 @@
     font-family: 'Outfit', sans-serif !important;
     font-size: 22px !important;
     font-weight: 700 !important;
-    color: #e78a53 !important;
+    color: #af804d !important;
     margin-top: auto !important;
     margin-bottom: 14px !important;
     line-height: 1.2 !important;
@@ -759,8 +759,8 @@
     font-size: 13.5px !important;
     font-weight: 600 !important;
     background: transparent !important;
-    border: 1.5px solid #e78a53 !important;
-    color: #e78a53 !important;
+    border: 1.5px solid #af804d !important;
+    color: #af804d !important;
     border-radius: 0.75rem !important;
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
     cursor: pointer !important;
@@ -773,9 +773,9 @@
 }
 
 .service-area .services-caption .btn-choose-service:hover {
-    background: #e78a53 !important;
+    background: #af804d !important;
     color: #121113 !important;
-    box-shadow: 0 4px 15px rgba(231, 138, 83, 0.35) !important;
+    box-shadow: 0 4px 15px rgba(175, 128, 77, 0.35) !important;
     transform: translateY(-2px) !important;
 }
 
@@ -855,7 +855,7 @@
     transform: translateX(0);
 }
 
-/* Modal WhatsApp Generator (Amber Hearth #121113 & #e78a53) */
+/* Modal WhatsApp Generator (Amber Hearth #121113 & #af804d) */
 .andy-modal .modal-content {
     background-color: #121113;
     color: #c1c1c1;
@@ -870,7 +870,7 @@
 }
 
 .andy-modal .modal-title {
-    color: #e78a53;
+    color: #af804d;
     font-family: 'Outfit', sans-serif;
     font-weight: 700;
     font-size: 20px;
@@ -884,7 +884,7 @@
 }
 
 .andy-modal .close:hover {
-    color: #e78a53;
+    color: #af804d;
     opacity: 1;
 }
 
@@ -909,14 +909,14 @@
 }
 
 .andy-modal .form-control:focus {
-    border-color: #e78a53;
-    box-shadow: 0 0 0 0.2rem rgba(231, 138, 83, 0.25);
+    border-color: #af804d;
+    box-shadow: 0 0 0 0.2rem rgba(175, 128, 77, 0.25);
     background-color: #121212;
     color: #ffffff;
 }
 
 .andy-modal .btn-submit-wa {
-    background: #e78a53;
+    background: #af804d;
     color: #121113;
     border: none;
     font-family: 'Outfit', sans-serif;
@@ -930,14 +930,14 @@
     justify-content: center;
     gap: 8px;
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 15px rgba(231, 138, 83, 0.35);
+    box-shadow: 0 4px 15px rgba(175, 128, 77, 0.35);
     cursor: pointer;
 }
 
 .andy-modal .btn-submit-wa:hover {
-    background: #f09a67;
+    background: #c49362;
     color: #121113;
-    box-shadow: 0 8px 25px rgba(231, 138, 83, 0.45);
+    box-shadow: 0 8px 25px rgba(175, 128, 77, 0.45);
     transform: translateY(-2px);
 }
 
@@ -1197,8 +1197,8 @@
 }
 
 .gallery-area .box.snake:hover {
-    border-color: #e78a53;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(231, 138, 83, 0.2);
+    border-color: #af804d;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(175, 128, 77, 0.2);
     transform: translateY(-3px);
 }
 
@@ -1273,8 +1273,8 @@
     top: 12px;
     left: 12px;
     background: rgba(18, 17, 19, 0.9);
-    border: 1px solid rgba(231, 138, 83, 0.45);
-    color: #fbcb97;
+    border: 1px solid rgba(175, 128, 77, 0.45);
+    color: #d4b48a;
     font-size: 11px;
     font-weight: 700;
     text-transform: uppercase;
@@ -1314,7 +1314,7 @@
 }
 
 .btn-booking-mobile {
-    background: #e78a53 !important;
+    background: #af804d !important;
     color: #121113 !important;
     font-family: 'Outfit', sans-serif !important;
     font-size: 13px !important;
@@ -1327,17 +1327,17 @@
     justify-content: center;
     gap: 8px;
     text-decoration: none !important;
-    box-shadow: 0 4px 15px rgba(231, 138, 83, 0.35) !important;
+    box-shadow: 0 4px 15px rgba(175, 128, 77, 0.35) !important;
     width: 100%;
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-booking-mobile:hover,
 .btn-booking-mobile:active {
-    background: #f09a67 !important;
+    background: #c49362 !important;
     color: #121113 !important;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(231, 138, 83, 0.45) !important;
+    box-shadow: 0 6px 20px rgba(175, 128, 77, 0.45) !important;
 }
 
 /* ==========================================
@@ -1354,14 +1354,14 @@
 }
 
 .pricing-line {
-    border-bottom: 1.5px dashed rgba(231, 138, 83, 0.4);
+    border-bottom: 1.5px dashed rgba(175, 128, 77, 0.4);
     height: 1px;
     min-width: 15px;
 }
 
 .pricing-price {
     font-family: 'Outfit', sans-serif;
-    color: #e78a53 !important;
+    color: #af804d !important;
     font-size: 16px;
     font-weight: 700;
     white-space: nowrap;
@@ -1403,7 +1403,7 @@
         justify-content: flex-start !important;
     }
     .service-area .services-caption.active {
-        border-color: #e78a53 !important;
+        border-color: #af804d !important;
         background: #1a191c !important;
     }
     .service-area .services-caption .service-cap {
@@ -1446,8 +1446,8 @@
         margin-bottom: 0 !important;
         border-radius: 50% !important;
         background: #121113 !important;
-        border: 1px solid rgba(231, 138, 83, 0.4) !important;
-        color: #e78a53 !important;
+        border: 1px solid rgba(175, 128, 77, 0.4) !important;
+        color: #af804d !important;
     }
     .service-area .services-caption .service-icon::before {
         display: none !important;
@@ -1457,7 +1457,7 @@
         font-size: 18px !important;
         margin-top: auto !important;
         margin-bottom: 10px !important;
-        color: #e78a53 !important;
+        color: #af804d !important;
     }
     .services-caption .btn-choose-service {
         width: 100% !important;
@@ -1468,9 +1468,9 @@
         font-size: 13px !important;
         margin-top: 0 !important;
         border-radius: 0.75rem !important;
-        background: rgba(231, 138, 83, 0.12) !important;
-        border: 1.5px solid #e78a53 !important;
-        color: #e78a53 !important;
+        background: rgba(175, 128, 77, 0.12) !important;
+        border: 1.5px solid #af804d !important;
+        color: #af804d !important;
         display: inline-flex !important;
         align-items: center !important;
         justify-content: center !important;
@@ -1497,7 +1497,7 @@
 
 /* ==========================================
    TESTIMONIALS 3-COLUMN INFINITE MARQUEE
-   (Amber Hearth Theme: #121113, #e78a53, #222222)
+   (Amber Hearth Theme: #121113, #af804d, #222222)
    ========================================== */
 .testimonials-area {
     background-color: #121113 !important;
@@ -1509,8 +1509,8 @@
 
 .testimonials-badge {
     display: inline-block;
-    background: rgba(231, 138, 83, 0.12);
-    color: #e78a53;
+    background: rgba(175, 128, 77, 0.12);
+    color: #af804d;
     font-family: 'Outfit', sans-serif;
     font-size: 13px;
     font-weight: 700;
@@ -1518,7 +1518,7 @@
     letter-spacing: 1.5px;
     padding: 6px 18px;
     border-radius: 0.75rem;
-    border: 1px solid rgba(231, 138, 83, 0.35);
+    border: 1px solid rgba(175, 128, 77, 0.35);
     margin-bottom: 12px;
 }
 
@@ -1588,14 +1588,14 @@
 }
 
 .testimonial-card:hover {
-    border-color: #e78a53;
+    border-color: #af804d;
     background: rgba(26, 25, 28, 0.98);
     transform: translateY(-4px);
-    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 20px rgba(231, 138, 83, 0.22);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 20px rgba(175, 128, 77, 0.22);
 }
 
 .testimonial-stars {
-    color: #e78a53;
+    color: #af804d;
     font-size: 14px;
     letter-spacing: 2px;
 }
@@ -1623,7 +1623,7 @@
     height: 44px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid #e78a53;
+    border: 2px solid #af804d;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
@@ -1681,7 +1681,7 @@
     left: 8%;
     width: 320px;
     height: 320px;
-    background: radial-gradient(circle, rgba(231, 138, 83, 0.08) 0%, rgba(231, 138, 83, 0) 70%);
+    background: radial-gradient(circle, rgba(175, 128, 77, 0.08) 0%, rgba(175, 128, 77, 0) 70%);
     pointer-events: none;
     filter: blur(40px);
 }
@@ -1712,7 +1712,7 @@
     bottom: 0;
     width: 26px;
     height: 2px;
-    background: #e78a53;
+    background: #af804d;
     border-radius: 2px;
 }
 
@@ -1743,8 +1743,8 @@
 }
 
 .footer-newsletter-input:focus {
-    border-color: #e78a53 !important;
-    box-shadow: 0 0 15px rgba(231, 138, 83, 0.3) !important;
+    border-color: #af804d !important;
+    box-shadow: 0 0 15px rgba(175, 128, 77, 0.3) !important;
     background: #161517 !important;
 }
 
@@ -1755,7 +1755,7 @@
     width: 38px;
     height: 38px;
     border-radius: 0.5rem !important;
-    background: #e78a53 !important;
+    background: #af804d !important;
     color: #121113 !important;
     border: none !important;
     display: inline-flex;
@@ -1768,8 +1768,8 @@
 
 .footer-newsletter-btn:hover {
     transform: scale(1.08);
-    background: #f09a67 !important;
-    box-shadow: 0 0 14px rgba(231, 138, 83, 0.6) !important;
+    background: #c49362 !important;
+    box-shadow: 0 0 14px rgba(175, 128, 77, 0.6) !important;
 }
 
 /* Quick Navigation Links */
@@ -1795,13 +1795,13 @@
 
 .footer-nav-list a i {
     font-size: 10px;
-    color: #e78a53;
+    color: #af804d;
     opacity: 0.7;
     transition: transform 0.2s ease;
 }
 
 .footer-nav-list a:hover {
-    color: #e78a53;
+    color: #af804d;
     padding-left: 4px;
 }
 
@@ -1814,47 +1814,65 @@
 .footer-contact-details {
     font-size: 14px;
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
 }
 
 .footer-contact-item {
-    display: flex;
-    align-items: flex-start;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
     gap: 12px;
     margin-bottom: 12px;
+    flex-wrap: nowrap;
 }
 
-.footer-contact-icon {
+.footer-contact-item > .footer-contact-icon {
     width: 20px;
     min-width: 20px;
-    color: #e78a53 !important;
-    display: inline-flex;
+    max-width: 20px;
+    height: 20px;
+    color: #af804d !important;
+    display: inline-flex !important;
     align-items: center;
     justify-content: center;
     font-size: 15px;
-    margin-top: 3px;
+    margin-top: 2px;
     flex-shrink: 0;
+    flex-grow: 0;
     background: transparent !important;
     border: none !important;
     border-radius: 0 !important;
     box-shadow: none !important;
+    padding: 0 !important;
     transition: color 0.2s ease, transform 0.2s ease;
 }
 
+.footer-contact-item > .footer-contact-icon i {
+    font-size: 15px;
+    line-height: 1;
+    width: auto;
+    height: auto;
+}
+
 .footer-contact-item:hover .footer-contact-icon {
-    color: #f09a67 !important;
+    color: #c49362 !important;
     transform: scale(1.15);
 }
 
-.footer-contact-text,
-.footer-contact-details p,
-.footer-contact-details span {
+.footer-contact-item > .footer-contact-text,
+.footer-contact-item > a.footer-contact-text {
     color: #c1c1c1 !important;
     font-family: 'Outfit', sans-serif;
     font-size: 14px;
     line-height: 1.55;
-    flex: 1;
+    flex: 1 1 0%;
+    min-width: 0;
     margin: 0;
+    padding: 0;
     text-decoration: none !important;
+    display: block !important;
 }
 
 .footer-contact-link {
@@ -1863,27 +1881,27 @@
     font-weight: 600;
     text-decoration: none !important;
     transition: color 0.2s ease, text-shadow 0.2s ease;
-    display: inline-block;
+    display: block !important;
 }
 
 .footer-contact-link:hover {
-    color: #e78a53 !important;
-    text-shadow: 0 0 8px rgba(231, 138, 83, 0.4);
+    color: #af804d !important;
+    text-shadow: 0 0 8px rgba(175, 128, 77, 0.4);
     text-decoration: none !important;
 }
 
 .text-gold {
-    color: #e78a53 !important;
+    color: #af804d !important;
 }
 
 .hover-gold:hover {
-    color: #e78a53 !important;
+    color: #af804d !important;
     text-decoration: none;
 }
 
 .footer-rating-pill {
     background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(231, 138, 83, 0.3);
+    border: 1px solid rgba(175, 128, 77, 0.3);
     border-radius: 0.75rem;
     padding: 6px 14px;
     font-size: 12px;
@@ -1904,7 +1922,7 @@
     border-radius: 0.75rem;
     background: #121212;
     border: 1px solid #222222;
-    color: #e78a53 !important;
+    color: #af804d !important;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -1915,11 +1933,11 @@
 }
 
 .footer-social-btn:hover {
-    background: #e78a53;
+    background: #af804d;
     color: #121113 !important;
-    border-color: #e78a53;
+    border-color: #af804d;
     transform: translateY(-3px) scale(1.08);
-    box-shadow: 0 8px 18px rgba(231, 138, 83, 0.4);
+    box-shadow: 0 8px 18px rgba(175, 128, 77, 0.4);
 }
 
 /* Theme Status Box */
@@ -1957,7 +1975,7 @@
 }
 
 .footer-policy-links a:hover {
-    color: #e78a53;
+    color: #af804d;
 }
 
 @media (max-width: 767px) {

@@ -32,7 +32,7 @@
 }
 
 .depth-carousel:focus-visible {
-    outline: 2px solid rgba(212, 175, 55, 0.5);
+    outline: 2px solid rgba(175, 128, 77, 0.5);
     outline-offset: 4px;
     border-radius: 12px;
 }
@@ -53,7 +53,7 @@
     transform-origin: center center;
     overflow: hidden;
     background: #0b0f19;
-    border: 1px solid rgba(212, 175, 55, 0.3);
+    border: 1px solid rgba(175, 128, 77, 0.3);
     box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.75), 0 10px 25px -10px rgba(0, 0, 0, 0.6);
     will-change: transform, opacity, filter;
     cursor: pointer;
@@ -62,7 +62,7 @@
 }
 
 .depth-carousel__card:hover {
-    border-color: rgba(212, 175, 55, 0.7);
+    border-color: rgba(175, 128, 77, 0.7);
 }
 
 .depth-carousel__img {
@@ -102,8 +102,8 @@
 
 .depth-carousel__badge {
     align-self: flex-start;
-    background: rgba(212, 175, 55, 0.15);
-    border: 1px solid rgba(212, 175, 55, 0.4);
+    background: rgba(175, 128, 77, 0.15);
+    border: 1px solid rgba(175, 128, 77, 0.4);
     color: #f3e5ab;
     font-size: 11px;
     font-weight: 600;
@@ -169,12 +169,12 @@
     height: 46px;
     display: grid;
     place-items: center;
-    border: 1px solid rgba(212, 175, 55, 0.35);
+    border: 1px solid rgba(175, 128, 77, 0.35);
     border-radius: 999px;
     background: rgba(11, 15, 25, 0.75);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    color: #d4af37;
+    color: #af804d;
     cursor: pointer;
     transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
@@ -182,7 +182,7 @@
 
 .depth-carousel__arrow:hover {
     background: rgba(22, 31, 48, 0.95);
-    border-color: #d4af37;
+    border-color: #af804d;
     color: #ffffff;
     transform: translateY(-50%) scale(1.08);
 }
@@ -212,7 +212,7 @@
     padding: 8px 14px;
     border-radius: 999px;
     background: rgba(11, 15, 25, 0.7);
-    border: 1px solid rgba(212, 175, 55, 0.25);
+    border: 1px solid rgba(175, 128, 77, 0.25);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
 }
@@ -230,8 +230,8 @@
 
 .depth-carousel__dot.is-active {
     width: 24px;
-    background: #d4af37;
-    box-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
+    background: #af804d;
+    box-shadow: 0 0 10px rgba(175, 128, 77, 0.6);
 }
 
 /* Reduced Motion Support */
