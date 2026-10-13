@@ -1,7 +1,70 @@
 /* ==========================================================================
    Andy Barbershop - Custom Enhancements & Branding
-   Color Palette: Dark Slate (#0b0f19, #161f30), Gold Accent (#d4af37, #f3e5ab)
+   Theme: Amber Hearth by @serafimcloud (21st.dev / shadcn/ui)
+   Palette:
+     Dark Hearth Background (#121113), Surface/Card (#121212)
+     Primary Flame (#e78a53, #d87943), Primary FG (#121113)
+     Secondary Sage Steel (#5f8787), Secondary FG (#ffffff)
+     Accent / Ring (#e78a53), Muted (#222222), Border (#222222)
+     Chart-3 Warm Peach Amber (#fbcb97)
+   Typography: Outfit (Headings, Buttons, Nav & Body)
+   Radius: 0.75rem (12px)
    ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Work+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+    /* 21st.dev Amber Hearth Official Tokens (by @serafimcloud) */
+    --background: #121113;
+    --foreground: #c1c1c1;
+    --card: #121212;
+    --card-foreground: #c1c1c1;
+    --popover: #121113;
+    --popover-foreground: #c1c1c1;
+    --primary: #e78a53;
+    --primary-foreground: #121113;
+    --secondary: #5f8787;
+    --secondary-foreground: #ffffff;
+    --muted: #222222;
+    --muted-foreground: #888888;
+    --accent: #333333;
+    --accent-foreground: #c1c1c1;
+    --destructive: #5f8787;
+    --destructive-foreground: #121113;
+    --border: #222222;
+    --input: #222222;
+    --ring: #e78a53;
+    --radius: 0.75rem;
+    --chart-1: #5f8787;
+    --chart-2: #e78a53;
+    --chart-3: #fbcb97;
+    --chart-4: #888888;
+    --chart-5: #999999;
+    --font-sans: 'Outfit', ui-sans-serif, sans-serif, system-ui;
+    --font-serif: 'Merriweather', ui-serif, serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+    /* Semantic color mappings for Andy Barbershop */
+    --color-primary: #e78a53;
+    --color-primary-hover: #f09a67;
+    --color-on-primary: #121113;
+    --color-secondary: #5f8787;
+    --color-secondary-hover: #719b9b;
+    --color-on-secondary: #ffffff;
+    --color-accent: #e78a53;
+    --color-accent-hover: #f09a67;
+    --color-accent-light: #fbcb97;
+    --color-accent-glow: rgba(231, 138, 83, 0.35);
+    --color-on-accent: #121113;
+    --color-bg-dark: #121113;
+    --color-surface-dark: #121212;
+    --color-surface-raised: #1a191b;
+    --color-border: #222222;
+    --color-border-accent: rgba(231, 138, 83, 0.3);
+    --font-heading: 'Outfit', sans-serif;
+    --font-nav: 'Outfit', sans-serif;
+    --font-body: 'Outfit', sans-serif;
+}
 
 /* ==========================================
    NAVBAR / HEADER OVERRIDES
@@ -16,48 +79,55 @@
     padding: 0 40px !important;
 }
 
-/* Sticky header: dark slate with gold border, blur effect */
+/* Sticky header: Amber Hearth dark obsidian (#121113) with radiant amber #e78a53 border */
 .header-sticky.sticky-bar {
-    background: rgba(11, 15, 25, 0.97) !important;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    background: rgba(18, 17, 19, 0.96) !important;
+    border-bottom: 1px solid rgba(231, 138, 83, 0.25);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 1px 0 rgba(231, 138, 83, 0.15);
 }
 
-/* Menu link styling: better spacing & brand colors */
+/* Menu link styling: Outfit font, letter spacing & Amber Hearth hover */
 .header-area .main-header .main-menu ul li a {
     padding: 35px 18px !important;
     font-size: 16px;
     font-weight: 500;
-    font-family: 'Plus Jakarta Sans', 'Open Sans', sans-serif;
+    font-family: 'Outfit', sans-serif !important;
     letter-spacing: 0.3px;
-    color: rgba(255, 255, 255, 0.85);
-    transition: color 0.3s ease;
+    color: rgba(255, 255, 255, 0.88);
+    transition: color 0.25s ease;
 }
 
-/* Active & hover: gold accent */
+/* Active & hover: Amber Hearth primary flame #e78a53 */
 .header-area .main-header .main-menu ul li.active > a,
 .header-area .main-header .main-menu ul li:hover > a {
-    color: #d4af37 !important;
+    color: #e78a53 !important;
 }
 
-/* Active/hover decorative lines: match gold brand */
+/* Active/hover decorative lines: match Amber Hearth primary flame #e78a53 */
 .header-area .main-header .main-menu ul li a::before,
 .header-area .main-header .main-menu ul li a::after {
-    background: #d4af37 !important;
+    background: #e78a53 !important;
 }
 
-/* Submenu: dark theme */
+/* Submenu: dark theme with Amber Hearth border */
 .header-area .main-header .main-menu ul ul.submenu {
-    background: rgba(11, 15, 25, 0.95) !important;
-    border: 1px solid rgba(212, 175, 55, 0.2);
-    backdrop-filter: blur(12px);
-    border-radius: 6px;
+    background: rgba(18, 17, 19, 0.96) !important;
+    border: 1px solid rgba(231, 138, 83, 0.25);
+    backdrop-filter: blur(14px);
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+.header-area .main-header .main-menu ul ul.submenu > li > a {
+    font-family: 'Outfit', sans-serif !important;
+    font-weight: 500;
 }
 
 .header-area .main-header .main-menu ul ul.submenu > li > a:hover {
-    color: #d4af37 !important;
+    color: #e78a53 !important;
+    background: rgba(231, 138, 83, 0.12) !important;
 }
 
 /* Menu container: proper alignment */
@@ -83,42 +153,43 @@
     width: auto;
     max-width: 100%;
     object-fit: contain;
-    border-radius: 8px;
+    border-radius: 0.75rem;
     background: #ffffff;
     padding: 2px;
-    border: 1px solid rgba(212, 175, 55, 0.4);
+    border: 1px solid rgba(231, 138, 83, 0.4);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .logo:hover img {
     transform: scale(1.05);
-    box-shadow: 0 6px 18px rgba(212, 175, 55, 0.35);
+    border-color: #e78a53;
+    box-shadow: 0 6px 18px rgba(231, 138, 83, 0.35);
 }
 
 .footer-logo img {
     height: 80px;
     width: auto;
     object-fit: contain;
-    border-radius: 8px;
+    border-radius: 0.75rem;
     background: #ffffff;
     padding: 3px;
-    border: 1px solid rgba(212, 175, 55, 0.4);
+    border: 1px solid rgba(231, 138, 83, 0.4);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .preloader-img img {
     max-height: 90px;
     width: auto;
-    border-radius: 12px;
-    border: 2px solid #d4af37;
+    border-radius: 0.75rem;
+    border: 2px solid #e78a53;
     background: #ffffff;
     padding: 4px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 24px rgba(231, 138, 83, 0.35);
 }
 
 .logo-brand-text {
-    font-family: 'Cinzel', serif, 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Outfit', sans-serif !important;
     font-weight: 700;
     font-size: 18px;
     color: #ffffff;
@@ -128,11 +199,12 @@
 }
 
 .logo-brand-text span {
-    color: #d4af37;
+    color: #e78a53 !important;
     display: block;
+    font-family: 'Outfit', sans-serif !important;
     font-size: 10px;
     letter-spacing: 2px;
-    font-weight: 500;
+    font-weight: 600;
     margin-top: 2px;
 }
 
@@ -206,9 +278,9 @@
 .slicknav_btn,
 .mobile_menu .slicknav_btn,
 .mobile_menu .slicknav_menu .slicknav_btn {
-    background-color: rgba(22, 31, 48, 0.95) !important;
-    border: 1px solid rgba(212, 175, 55, 0.45) !important;
-    border-radius: 8px !important;
+    background-color: rgba(18, 18, 18, 0.95) !important;
+    border: 1px solid rgba(231, 138, 83, 0.3) !important;
+    border-radius: 0.75rem !important;
     width: 42px !important;
     height: 40px !important;
     padding: 0 !important;
@@ -217,7 +289,7 @@
     justify-content: center !important;
     cursor: pointer !important;
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
     outline: none !important;
     text-decoration: none !important;
 }
@@ -226,9 +298,9 @@
 .slicknav_btn.slicknav_open,
 .mobile_menu .slicknav_btn:hover,
 .mobile_menu .slicknav_btn.slicknav_open {
-    background-color: #161f30 !important;
-    border-color: #d4af37 !important;
-    box-shadow: 0 0 15px rgba(212, 175, 55, 0.35) !important;
+    background-color: #1a191b !important;
+    border-color: #e78a53 !important;
+    box-shadow: 0 0 15px rgba(231, 138, 83, 0.35) !important;
 }
 
 /* Hide default 3-bar span icons to ensure strictly clean icon-only button */
@@ -248,13 +320,13 @@
     padding: 0 !important;
     font-size: 20px !important;
     line-height: 1 !important;
-    color: #d4af37 !important;
+    color: #e78a53 !important;
     transition: transform 0.25s ease, color 0.25s ease !important;
 }
 
 .slicknav_btn:hover .slicknav_menutxt,
 .mobile_menu .slicknav_btn:hover .slicknav_menutxt {
-    color: #f1c40f !important;
+    color: #f09a67 !important;
 }
 
 /* When open, icon morphs smoothly into close icon (fa-times) */
@@ -267,20 +339,20 @@
 
 .slicknav_btn.slicknav_open .slicknav_menutxt,
 .mobile_menu .slicknav_btn.slicknav_open .slicknav_menutxt {
-    color: #f1c40f !important;
+    color: #f09a67 !important;
     transform: rotate(90deg);
 }
 
 .slicknav_icon-bar {
-    background-color: #d4af37 !important;
+    background-color: #e78a53 !important;
 }
 
 /* FIX: Ensure .slicknav_nav dropdown has solid dark background and high z-index */
 .mobile_menu .slicknav_menu .slicknav_nav,
 .slicknav_nav {
-    background: #0b0f19 !important;
-    border: 1px solid rgba(212, 175, 55, 0.35) !important;
-    border-radius: 10px !important;
+    background: #121113 !important;
+    border: 1px solid rgba(231, 138, 83, 0.25) !important;
+    border-radius: 0.75rem !important;
     padding: 12px 8px !important;
     margin-top: 12px !important;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9) !important;
@@ -300,15 +372,15 @@
     border-bottom: none !important;
 }
 
-/* Visible, crisp white text with clear gold hover */
+/* Visible, crisp white text with Outfit font and Amber Hearth accent hover */
 .mobile_menu .slicknav_menu .slicknav_nav a,
 .slicknav_nav a {
     color: #ffffff !important;
-    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-family: 'Outfit', sans-serif !important;
     font-size: 15px !important;
     font-weight: 600 !important;
     padding: 12px 16px !important;
-    border-radius: 6px !important;
+    border-radius: 0.5rem !important;
     display: block !important;
     text-decoration: none !important;
     background: transparent !important;
@@ -319,8 +391,8 @@
 .mobile_menu .slicknav_menu .slicknav_nav li.active > a,
 .slicknav_nav a:hover,
 .slicknav_nav li.active > a {
-    color: #d4af37 !important;
-    background: rgba(212, 175, 55, 0.15) !important;
+    color: #e78a53 !important;
+    background: rgba(231, 138, 83, 0.12) !important;
     padding-left: 22px !important;
 }
 
@@ -328,25 +400,79 @@
     color: #ffffff !important;
 }
 
-/* Header Booking Button */
-.header-btn-wa {
-    background: #059669 !important;
-    color: #ffffff !important;
-    border: 2px solid #059669 !important;
-    font-weight: 600;
+/* Header & Hero CTA Booking Button (Amber Hearth Design System: Radiant Amber #e78a53 + Outfit Font + 0.75rem Radius) */
+.header-btn-wa,
+.hero__btn .btn.btn-open-booking {
+    background: #e78a53 !important;
+    color: #121113 !important;
+    border: 1px solid rgba(231, 138, 83, 0.5) !important;
+    font-family: 'Outfit', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 15px;
+    letter-spacing: 0.3px;
     padding: 12px 24px !important;
-    border-radius: 4px;
+    border-radius: 0.75rem !important;
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    transition: all 0.3s ease;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 14px rgba(231, 138, 83, 0.3);
+    cursor: pointer;
+    text-transform: none;
 }
 
-.header-btn-wa:hover {
-    background: #047857 !important;
-    border-color: #047857 !important;
+.header-btn-wa i,
+.hero__btn .btn.btn-open-booking i {
+    color: #121113 !important;
+    transition: transform 0.25s ease;
+}
+
+/* Hover state: Elevated Radiant Amber Glow (Amber Hearth Harmony — Segar, Luminous, Bebas Cokelat!) */
+.header-btn-wa:hover,
+.hero__btn .btn.btn-open-booking:hover {
+    background: #f09a67 !important;
+    border-color: #f09a67 !important;
+    color: #121113 !important;
+    box-shadow: 0 8px 24px rgba(231, 138, 83, 0.45), 0 0 16px rgba(240, 154, 103, 0.35);
+    transform: translateY(-2px);
+}
+
+.header-btn-wa:hover i,
+.hero__btn .btn.btn-open-booking:hover i {
+    color: #121113 !important;
+    transform: scale(1.1);
+}
+
+.header-btn-wa:active,
+.hero__btn .btn.btn-open-booking:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 10px rgba(231, 138, 83, 0.3);
+}
+
+.header-btn-wa:focus,
+.hero__btn .btn.btn-open-booking:focus {
+    outline: 2px solid #e78a53;
+    outline-offset: 2px;
+}
+
+/* Secondary outline button in Hero (Amber Hearth Secondary: Sage Steel #5f8787) */
+.hero__btn .btn:not(.btn-open-booking) {
+    background: rgba(95, 135, 135, 0.12) !important;
+    border: 1.5px solid #5f8787 !important;
     color: #ffffff !important;
-    box-shadow: 0 4px 15px rgba(5, 150, 105, 0.4);
+    font-family: 'Outfit', sans-serif !important;
+    font-weight: 500 !important;
+    border-radius: 0.75rem !important;
+    padding: 12px 24px !important;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero__btn .btn:not(.btn-open-booking):hover {
+    background: #5f8787 !important;
+    border-color: #5f8787 !important;
+    color: #ffffff !important;
+    box-shadow: 0 6px 20px rgba(95, 135, 135, 0.35);
+    transform: translateY(-2px);
 }
 
 /* Hero Stroke Text — reposition to bottom of slider */
@@ -386,25 +512,25 @@
     }
 }
 
-/* Google Rating Badge in Hero */
+/* Google Rating Badge in Hero (Amber Hearth) */
 .rating-badge {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: rgba(22, 31, 48, 0.85);
-    border: 1px solid rgba(212, 175, 55, 0.35);
+    background: rgba(18, 17, 19, 0.9);
+    border: 1px solid rgba(231, 138, 83, 0.35);
     padding: 7px 16px 7px 12px;
     border-radius: 50px;
     margin-bottom: 22px;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.06);
     line-height: 1;
     max-width: 100%;
 }
 
 .rating-badge .stars {
-    color: #fbbf24;
+    color: #e78a53;
     font-size: 13px;
     display: inline-flex;
     align-items: center;
@@ -421,22 +547,22 @@
 }
 
 .rating-badge .rating-text {
-    color: #cbd5e1;
+    color: #c1c1c1;
     font-size: 12px;
     font-weight: 500;
     line-height: 1;
-    border-left: 1px solid rgba(212, 175, 55, 0.3);
+    border-left: 1px solid rgba(231, 138, 83, 0.3);
     padding-left: 10px;
     white-space: nowrap;
 }
 
-/* Schedule Table */
+/* Schedule Table (Amber Hearth Dark Card #121212 & Border #222222) */
 .schedule-card {
-    background: #161f30;
-    border: 1px solid rgba(212, 175, 55, 0.25);
-    border-radius: 12px;
+    background: #121212;
+    border: 1px solid #222222;
+    border-radius: 0.75rem;
     padding: 30px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .schedule-table {
@@ -449,10 +575,10 @@
     justify-content: space-between;
     align-items: center;
     padding: 12px 16px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    color: #cbd5e1;
+    border-bottom: 1px solid #222222;
+    color: #c1c1c1;
     font-size: 15px;
-    border-radius: 6px;
+    border-radius: 0.5rem;
     transition: background 0.2s ease;
 }
 
@@ -461,19 +587,19 @@
 }
 
 .schedule-row.today-highlight {
-    background: rgba(212, 175, 55, 0.15);
-    border: 1px solid #d4af37;
+    background: rgba(231, 138, 83, 0.12);
+    border: 1px solid #e78a53;
     color: #ffffff;
     font-weight: 700;
 }
 
 .today-tag {
-    background: #d4af37;
-    color: #0b0f19;
+    background: #e78a53;
+    color: #121113;
     font-size: 11px;
     font-weight: 800;
     padding: 2px 8px;
-    border-radius: 4px;
+    border-radius: 0.375rem;
     margin-left: 8px;
     letter-spacing: 0.5px;
 }
@@ -490,8 +616,8 @@
 }
 
 .live-status-open {
-    background: rgba(5, 150, 105, 0.2);
-    color: #34d399;
+    background: rgba(95, 135, 135, 0.2);
+    color: #6ee7b7;
     border: 1px solid #059669;
 }
 
@@ -524,31 +650,161 @@
     100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
 }
 
-/* Service Card Enhancements */
-.services-caption .service-price {
-    font-size: 22px;
-    font-weight: 800;
-    color: #d4af37;
-    margin-top: 10px;
-    display: block;
+/* ==========================================================================
+   EQUAL-SIZED SERVICE CARDS SYSTEM (All Cards Exact Same Size & Alignment)
+   ========================================================================== */
+
+/* Pastikan kolom layanan bersifat flexbox container agar kartu merentang sama tinggi */
+.service-area .row {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.services-caption .btn-choose-service {
-    margin-top: 15px;
-    padding: 8px 20px;
-    font-size: 13px;
-    font-weight: 600;
-    background: transparent;
-    border: 1px solid #d4af37;
-    color: #d4af37;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    cursor: pointer;
+.service-area [class*="col-"] {
+    display: flex;
+    flex-direction: column;
 }
 
-.services-caption .btn-choose-service:hover {
-    background: #d4af37;
-    color: #0b0f19;
+/* Card Container: Ukuran dan tinggi 100% seragam antar baris & kolom */
+.service-area .services-caption {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 520px; /* Seragam di desktop across Row 1 & Row 2 */
+    box-sizing: border-box !important;
+    padding: 55px 30px 42px !important;
+    border-radius: 0.75rem !important;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease !important;
+}
+
+.service-area .services-caption:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Icon Area: Ukuran dan margin konsisten di setiap kartu */
+.service-area .services-caption .service-icon {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 25px !important;
+    flex-shrink: 0 !important;
+}
+
+.service-area .services-caption .service-icon i {
+    width: 95px !important;
+    height: 95px !important;
+    line-height: 95px !important;
+    font-size: 38px !important;
+    margin-bottom: 0 !important;
+    border-radius: 50% !important;
+    display: inline-block !important;
+    transition: all 0.3s ease !important;
+}
+
+/* Card Body / Caption: Mengisi seluruh ruang yang tersisa */
+.service-area .services-caption .service-cap {
+    display: flex !important;
+    flex-direction: column !important;
+    flex: 1 1 auto !important;
+    width: 100% !important;
+}
+
+/* Judul Layanan: Tinggi minimum seragam agar teks 1 atau 2 baris tidak menggeser layout */
+.service-area .services-caption .service-cap h4 {
+    min-height: 56px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    margin-bottom: 12px !important;
+    font-size: 22px !important;
+    line-height: 1.3 !important;
+    font-family: 'Outfit', sans-serif !important;
+}
+
+/* Deskripsi: Tinggi minimum seragam & flex-grow agar tombol & harga berada di baseline yang sama */
+.service-area .services-caption .service-cap p {
+    flex: 1 1 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    min-height: 64px !important;
+    margin-bottom: 16px !important;
+    line-height: 1.55 !important;
+    font-size: 14.5px !important;
+}
+
+/* Tarif / Harga: Terkunci di posisi bawah secara presisi */
+.service-area .services-caption .service-price {
+    font-family: 'Outfit', sans-serif !important;
+    font-size: 22px !important;
+    font-weight: 700 !important;
+    color: #e78a53 !important;
+    margin-top: auto !important;
+    margin-bottom: 14px !important;
+    line-height: 1.2 !important;
+    display: block !important;
+}
+
+/* Tombol Pilih Layanan: Lebar & tinggi identik di seluruh kartu */
+.service-area .services-caption .btn-choose-service {
+    margin-top: 0 !important;
+    padding: 0 20px !important;
+    height: 42px !important;
+    width: 100% !important;
+    max-width: 220px !important;
+    font-family: 'Outfit', sans-serif !important;
+    font-size: 13.5px !important;
+    font-weight: 600 !important;
+    background: transparent !important;
+    border: 1.5px solid #e78a53 !important;
+    color: #e78a53 !important;
+    border-radius: 0.75rem !important;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    cursor: pointer !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+}
+
+.service-area .services-caption .btn-choose-service:hover {
+    background: #e78a53 !important;
+    color: #121113 !important;
+    box-shadow: 0 4px 15px rgba(231, 138, 83, 0.35) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Penyesuaian Responsif Layar Laptop (992px - 1199px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .service-area .services-caption {
+        min-height: 530px !important;
+        padding: 45px 20px 38px !important;
+    }
+    .service-area .services-caption .service-cap h4 {
+        font-size: 20px !important;
+        min-height: 52px !important;
+    }
+}
+
+/* Penyesuaian Responsif Tablet (769px - 991.98px) */
+@media (min-width: 769px) and (max-width: 991.98px) {
+    .service-area .services-caption {
+        min-height: 500px !important;
+        padding: 45px 25px 36px !important;
+        margin-bottom: 30px !important;
+    }
+    .service-area .services-caption .service-cap h4 {
+        font-size: 21px !important;
+        min-height: 50px !important;
+    }
+    .service-area .services-caption .service-cap p {
+        min-height: 56px !important;
+    }
 }
 
 /* Floating WhatsApp Button */
@@ -581,13 +837,13 @@
 .wa-float-tooltip {
     position: absolute;
     right: 70px;
-    background: #161f30;
-    color: #ffffff;
+    background: #121212;
+    color: #c1c1c1;
     padding: 6px 12px;
-    border-radius: 6px;
+    border-radius: 0.5rem;
     font-size: 12px;
     white-space: nowrap;
-    border: 1px solid rgba(212, 175, 55, 0.3);
+    border: 1px solid #222222;
     pointer-events: none;
     opacity: 0;
     transform: translateX(10px);
@@ -599,22 +855,23 @@
     transform: translateX(0);
 }
 
-/* Modal WhatsApp Generator */
+/* Modal WhatsApp Generator (Amber Hearth #121113 & #e78a53) */
 .andy-modal .modal-content {
-    background-color: #161f30;
-    color: #ffffff;
-    border: 1px solid #d4af37;
-    border-radius: 12px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    background-color: #121113;
+    color: #c1c1c1;
+    border: 1px solid #222222;
+    border-radius: 0.75rem;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
 }
 
 .andy-modal .modal-header {
-    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    border-bottom: 1px solid #222222;
     padding: 20px 24px;
 }
 
 .andy-modal .modal-title {
-    color: #d4af37;
+    color: #e78a53;
+    font-family: 'Outfit', sans-serif;
     font-weight: 700;
     font-size: 20px;
 }
@@ -627,7 +884,7 @@
 }
 
 .andy-modal .close:hover {
-    color: #d4af37;
+    color: #e78a53;
     opacity: 1;
 }
 
@@ -636,48 +893,52 @@
 }
 
 .andy-modal .form-group label {
-    color: #cbd5e1;
+    color: #c1c1c1;
     font-weight: 600;
     font-size: 14px;
     margin-bottom: 6px;
 }
 
 .andy-modal .form-control {
-    background-color: #0b0f19;
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background-color: #121212;
+    border: 1px solid #222222;
     color: #ffffff;
-    border-radius: 6px;
+    border-radius: 0.5rem;
     padding: 10px 14px;
     height: auto;
 }
 
 .andy-modal .form-control:focus {
-    border-color: #d4af37;
-    box-shadow: 0 0 0 0.2rem rgba(212, 175, 55, 0.25);
-    background-color: #0b0f19;
+    border-color: #e78a53;
+    box-shadow: 0 0 0 0.2rem rgba(231, 138, 83, 0.25);
+    background-color: #121212;
     color: #ffffff;
 }
 
 .andy-modal .btn-submit-wa {
-    background: #059669;
-    color: #ffffff;
+    background: #e78a53;
+    color: #121113;
     border: none;
+    font-family: 'Outfit', sans-serif;
     font-weight: 700;
     padding: 12px 20px;
-    border-radius: 6px;
+    border-radius: 0.75rem;
     width: 100%;
     font-size: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
-    transition: background 0.3s ease;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(231, 138, 83, 0.35);
     cursor: pointer;
 }
 
 .andy-modal .btn-submit-wa:hover {
-    background: #047857;
-    color: #ffffff;
+    background: #f09a67;
+    color: #121113;
+    box-shadow: 0 8px 25px rgba(231, 138, 83, 0.45);
+    transform: translateY(-2px);
 }
 
 /* Map Iframe Styling */
@@ -686,8 +947,8 @@
     padding-bottom: 50%;
     position: relative;
     height: 0;
-    border-radius: 10px;
-    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 0.75rem;
+    border: 1px solid #222222;
 }
 
 .map-responsive iframe {
@@ -925,24 +1186,24 @@
 }
 
 /* ==========================================
-   PORTFOLIO & GALLERY MULTI-SCREEN ENHANCEMENTS
+   PORTFOLIO & GALLERY MULTI-SCREEN ENHANCEMENTS (Amber Hearth)
    ========================================== */
 .gallery-area .box.snake {
-    border-radius: 14px;
+    border-radius: 0.75rem;
     overflow: hidden;
-    border: 1px solid rgba(212, 175, 55, 0.25);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+    border: 1px solid #222222;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gallery-area .box.snake:hover {
-    border-color: rgba(212, 175, 55, 0.6);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    border-color: #e78a53;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(231, 138, 83, 0.2);
     transform: translateY(-3px);
 }
 
 .gallery-area .box .overlay {
-    background: linear-gradient(180deg, rgba(11, 15, 25, 0.15) 0%, rgba(11, 15, 25, 0.75) 50%, rgba(11, 15, 25, 0.95) 100%) !important;
+    background: linear-gradient(180deg, rgba(18, 17, 19, 0.15) 0%, rgba(18, 17, 19, 0.75) 50%, rgba(18, 17, 19, 0.95) 100%) !important;
 }
 
 .gallery-area .box .overlay .overlay-content {
@@ -970,18 +1231,18 @@
 }
 
 /* ==========================================
-   MOBILE BOOTSTRAP GALLERY CARDS (< 768px)
+   MOBILE BOOTSTRAP GALLERY CARDS (< 768px) (Amber Hearth)
    ========================================== */
 .gallery-mobile-bootstrap {
     margin-top: 10px;
 }
 
 .mobile-haircut-card {
-    background: #161f30;
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    border-radius: 14px;
+    background: #121212;
+    border: 1px solid #222222;
+    border-radius: 0.75rem;
     overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -997,7 +1258,7 @@
     width: 100%;
     height: 230px;
     overflow: hidden;
-    background: #0b0f19;
+    background: #121113;
 }
 
 .mobile-haircut-img-box img {
@@ -1011,15 +1272,15 @@
     position: absolute;
     top: 12px;
     left: 12px;
-    background: rgba(11, 15, 25, 0.88);
-    border: 1px solid rgba(212, 175, 55, 0.45);
-    color: #f3e5ab;
+    background: rgba(18, 17, 19, 0.9);
+    border: 1px solid rgba(231, 138, 83, 0.45);
+    color: #fbcb97;
     font-size: 11px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     padding: 4px 10px;
-    border-radius: 6px;
+    border-radius: 0.5rem;
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
@@ -1035,7 +1296,7 @@
 }
 
 .mobile-haircut-title {
-    font-family: 'Cinzel', 'Oswald', serif;
+    font-family: 'Outfit', sans-serif;
     font-size: 20px;
     font-weight: 700;
     color: #ffffff;
@@ -1044,59 +1305,65 @@
 }
 
 .mobile-haircut-desc {
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Outfit', sans-serif;
     font-size: 12.5px;
-    color: #cbd5e1;
+    color: #c1c1c1;
     line-height: 1.5;
     margin: 0 0 16px 0;
     flex-grow: 1;
 }
 
 .btn-booking-mobile {
-    background: #059669 !important;
-    color: #ffffff !important;
+    background: #e78a53 !important;
+    color: #121113 !important;
+    font-family: 'Outfit', sans-serif !important;
     font-size: 13px !important;
-    font-weight: 600 !important;
+    font-weight: 700 !important;
     padding: 10px 16px !important;
-    border-radius: 6px !important;
+    border-radius: 0.75rem !important;
     border: none !important;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
     text-decoration: none !important;
-    box-shadow: 0 4px 12px rgba(5, 150, 105, 0.35);
+    box-shadow: 0 4px 15px rgba(231, 138, 83, 0.35) !important;
     width: 100%;
-    transition: background 0.2s ease, transform 0.2s ease;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.btn-booking-mobile:hover,
 .btn-booking-mobile:active {
-    background: #047857 !important;
-    transform: scale(0.97);
+    background: #f09a67 !important;
+    color: #121113 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(231, 138, 83, 0.45) !important;
 }
 
 /* ==========================================
-   PRICING TABLE FLEX LAYOUT & MOBILE FIXES
+   PRICING TABLE FLEX LAYOUT & MOBILE FIXES (Amber Hearth)
    ========================================== */
 .pricing-item {
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Outfit', sans-serif;
 }
 
 .pricing-name {
-    color: #0b0f19;
+    color: #f1f5f9;
     font-size: 15px;
     white-space: nowrap;
 }
 
 .pricing-line {
-    border-bottom: 1.5px dashed rgba(212, 175, 55, 0.5);
+    border-bottom: 1.5px dashed rgba(231, 138, 83, 0.4);
     height: 1px;
     min-width: 15px;
 }
 
 .pricing-price {
-    color: #d4af37 !important;
+    font-family: 'Outfit', sans-serif;
+    color: #e78a53 !important;
     font-size: 16px;
+    font-weight: 700;
     white-space: nowrap;
 }
 
@@ -1117,34 +1384,56 @@
 }
 
 /* ==========================================
-   SERVICES SECTION MOBILE CLEANUP
+   SERVICES SECTION MOBILE CLEANUP (Amber Hearth)
    ========================================== */
 @media (max-width: 768px) {
     .service-area {
         padding-bottom: 40px !important;
     }
     .service-area .services-caption {
-        padding: 26px 18px 22px !important;
-        border-radius: 12px !important;
+        padding: 24px 18px 22px !important;
+        border-radius: 0.75rem !important;
         margin-bottom: 20px !important;
-        background: #161f30 !important;
-        border: 1px solid rgba(212, 175, 55, 0.25) !important;
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3) !important;
+        background: #121212 !important;
+        border: 1px solid #222222 !important;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4) !important;
+        min-height: 310px !important; /* Tinggi seragam untuk seluruh kartu di mobile */
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
     }
     .service-area .services-caption.active {
-        border-color: #d4af37 !important;
-        background: #1a2538 !important;
+        border-color: #e78a53 !important;
+        background: #1a191c !important;
+    }
+    .service-area .services-caption .service-cap {
+        display: flex !important;
+        flex-direction: column !important;
+        flex: 1 1 auto !important;
     }
     .service-area .services-caption .service-cap h4 {
+        font-family: 'Outfit', sans-serif !important;
         color: #ffffff !important;
-        font-size: 19px !important;
-        margin-bottom: 8px !important;
+        font-size: 18px !important;
+        min-height: 44px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        margin-bottom: 6px !important;
     }
     .service-area .services-caption .service-cap p {
-        color: #cbd5e1 !important;
+        font-family: 'Outfit', sans-serif !important;
+        color: #c1c1c1 !important;
         font-size: 13px !important;
         line-height: 1.45 !important;
-        margin-bottom: 10px !important;
+        min-height: 56px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        flex: 1 1 auto !important;
+        margin-bottom: 8px !important;
     }
     .service-area .services-caption .service-icon {
         margin-bottom: 12px !important;
@@ -1156,26 +1445,35 @@
         font-size: 24px !important;
         margin-bottom: 0 !important;
         border-radius: 50% !important;
-        background: #0b0f19 !important;
-        border: 1px solid rgba(212, 175, 55, 0.4) !important;
+        background: #121113 !important;
+        border: 1px solid rgba(231, 138, 83, 0.4) !important;
+        color: #e78a53 !important;
     }
     .service-area .services-caption .service-icon::before {
         display: none !important;
     }
     .services-caption .service-price {
-        font-size: 19px !important;
-        margin-top: 8px !important;
-        color: #d4af37 !important;
+        font-family: 'Outfit', sans-serif !important;
+        font-size: 18px !important;
+        margin-top: auto !important;
+        margin-bottom: 10px !important;
+        color: #e78a53 !important;
     }
     .services-caption .btn-choose-service {
         width: 100% !important;
-        padding: 9px 14px !important;
+        max-width: 100% !important;
+        height: 40px !important;
+        padding: 0 14px !important;
+        font-family: 'Outfit', sans-serif !important;
         font-size: 13px !important;
-        margin-top: 10px !important;
-        border-radius: 6px !important;
-        background: rgba(212, 175, 55, 0.12) !important;
-        border: 1px solid #d4af37 !important;
-        color: #ffffff !important;
+        margin-top: 0 !important;
+        border-radius: 0.75rem !important;
+        background: rgba(231, 138, 83, 0.12) !important;
+        border: 1.5px solid #e78a53 !important;
+        color: #e78a53 !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
     }
 }
 
@@ -1199,10 +1497,10 @@
 
 /* ==========================================
    TESTIMONIALS 3-COLUMN INFINITE MARQUEE
-   (21st.dev / Shadcn inspired component)
+   (Amber Hearth Theme: #121113, #e78a53, #222222)
    ========================================== */
 .testimonials-area {
-    background-color: #0b0f19 !important;
+    background-color: #121113 !important;
     overflow: hidden;
     position: relative;
     padding-top: 90px;
@@ -1211,15 +1509,16 @@
 
 .testimonials-badge {
     display: inline-block;
-    background: rgba(212, 175, 55, 0.12);
-    color: #d4af37;
+    background: rgba(231, 138, 83, 0.12);
+    color: #e78a53;
+    font-family: 'Outfit', sans-serif;
     font-size: 13px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1.5px;
     padding: 6px 18px;
-    border-radius: 30px;
-    border: 1px solid rgba(212, 175, 55, 0.35);
+    border-radius: 0.75rem;
+    border: 1px solid rgba(231, 138, 83, 0.35);
     margin-bottom: 12px;
 }
 
@@ -1264,7 +1563,7 @@
     animation-play-state: paused;
 }
 
-/* Infinite Vertical Scroll Keyframe (translates first duplicated set seamlessly) */
+/* Infinite Vertical Scroll Keyframe */
 @keyframes marqueeScrollUp {
     0% {
         transform: translateY(0);
@@ -1274,29 +1573,29 @@
     }
 }
 
-/* Luxury Dark & Gold Card Styling */
+/* Amber Hearth Testimonial Card */
 .testimonial-card {
-    background: rgba(22, 31, 48, 0.88);
+    background: rgba(18, 18, 18, 0.95);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(212, 175, 55, 0.25);
-    border-radius: 20px;
+    border: 1px solid #222222;
+    border-radius: 0.75rem;
     padding: 24px 22px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     user-select: none;
 }
 
 .testimonial-card:hover {
-    border-color: #d4af37;
-    background: rgba(28, 41, 64, 0.95);
+    border-color: #e78a53;
+    background: rgba(26, 25, 28, 0.98);
     transform: translateY(-4px);
-    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 20px rgba(212, 175, 55, 0.22);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 20px rgba(231, 138, 83, 0.22);
 }
 
 .testimonial-stars {
-    color: #fbbf24;
+    color: #e78a53;
     font-size: 14px;
     letter-spacing: 2px;
 }
@@ -1304,16 +1603,16 @@
 .testimonial-badge {
     font-size: 11px;
     font-weight: 700;
-    color: #cbd5e1;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 20px;
+    color: #c1c1c1;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid #222222;
+    border-radius: 0.5rem;
     padding: 3px 10px;
 }
 
 .testimonial-text {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    color: #e2e8f0;
+    font-family: 'Outfit', sans-serif;
+    color: #c1c1c1;
     font-size: 14px;
     line-height: 1.65;
     margin-bottom: 0;
@@ -1324,12 +1623,12 @@
     height: 44px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid #d4af37;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    border: 2px solid #e78a53;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 .author-meta .author-name {
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Outfit', sans-serif;
     font-weight: 700;
     font-size: 15px;
     color: #ffffff;
@@ -1337,8 +1636,9 @@
 }
 
 .author-meta .author-role {
+    font-family: 'Outfit', sans-serif;
     font-size: 12px;
-    color: #94a3b8;
+    color: #888888;
     line-height: 1.3;
 }
 
@@ -1363,15 +1663,15 @@
 }
 
 /* ==========================================
-   MODERN FOOTER SECTION (21st.dev / Shadcn inspired)
+   MODERN FOOTER SECTION (Amber Hearth)
    ========================================== */
 .modern-footer-section {
-    background-color: #070a12 !important;
+    background-color: #0d0c0e !important;
     position: relative;
-    border-top: 1px solid rgba(212, 175, 55, 0.25);
+    border-top: 1px solid #222222;
     overflow: hidden;
-    color: #94a3b8;
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #c1c1c1;
+    font-family: 'Outfit', sans-serif;
     padding-top: 20px;
 }
 
@@ -1381,13 +1681,13 @@
     left: 8%;
     width: 320px;
     height: 320px;
-    background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, rgba(212, 175, 55, 0) 70%);
+    background: radial-gradient(circle, rgba(231, 138, 83, 0.08) 0%, rgba(231, 138, 83, 0) 70%);
     pointer-events: none;
     filter: blur(40px);
 }
 
 .footer-heading {
-    font-family: 'Cinzel', serif;
+    font-family: 'Cinzel', 'Outfit', serif;
     font-size: 22px;
     font-weight: 700;
     color: #ffffff;
@@ -1395,6 +1695,7 @@
 }
 
 .footer-col-title {
+    font-family: 'Outfit', sans-serif;
     font-size: 15px;
     font-weight: 700;
     color: #ffffff;
@@ -1411,14 +1712,15 @@
     bottom: 0;
     width: 26px;
     height: 2px;
-    background: #d4af37;
+    background: #e78a53;
     border-radius: 2px;
 }
 
 .footer-subtext {
+    font-family: 'Outfit', sans-serif;
     font-size: 14px;
     line-height: 1.6;
-    color: #94a3b8;
+    color: #888888;
 }
 
 /* Newsletter Input with circular send button */
@@ -1427,12 +1729,13 @@
 }
 
 .footer-newsletter-input {
-    background: rgba(22, 31, 48, 0.85) !important;
-    border: 1px solid rgba(212, 175, 55, 0.35) !important;
-    border-radius: 30px !important;
+    background: #121212 !important;
+    border: 1px solid #222222 !important;
+    border-radius: 0.75rem !important;
     height: 48px !important;
     padding-left: 20px !important;
     padding-right: 55px !important;
+    font-family: 'Outfit', sans-serif !important;
     font-size: 14px !important;
     color: #ffffff !important;
     backdrop-filter: blur(8px);
@@ -1440,9 +1743,9 @@
 }
 
 .footer-newsletter-input:focus {
-    border-color: #d4af37 !important;
-    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3) !important;
-    background: rgba(22, 31, 48, 0.95) !important;
+    border-color: #e78a53 !important;
+    box-shadow: 0 0 15px rgba(231, 138, 83, 0.3) !important;
+    background: #161517 !important;
 }
 
 .footer-newsletter-btn {
@@ -1451,9 +1754,9 @@
     top: 5px;
     width: 38px;
     height: 38px;
-    border-radius: 50% !important;
-    background: #d4af37 !important;
-    color: #0b0f19 !important;
+    border-radius: 0.5rem !important;
+    background: #e78a53 !important;
+    color: #121113 !important;
     border: none !important;
     display: inline-flex;
     align-items: center;
@@ -1465,8 +1768,8 @@
 
 .footer-newsletter-btn:hover {
     transform: scale(1.08);
-    background: #f1c40f !important;
-    box-shadow: 0 0 14px rgba(212, 175, 55, 0.6) !important;
+    background: #f09a67 !important;
+    box-shadow: 0 0 14px rgba(231, 138, 83, 0.6) !important;
 }
 
 /* Quick Navigation Links */
@@ -1481,7 +1784,8 @@
 }
 
 .footer-nav-list a {
-    color: #cbd5e1;
+    color: #c1c1c1;
+    font-family: 'Outfit', sans-serif;
     font-size: 14px;
     text-decoration: none;
     transition: all 0.2s ease;
@@ -1491,13 +1795,13 @@
 
 .footer-nav-list a i {
     font-size: 10px;
-    color: #d4af37;
-    opacity: 0.6;
+    color: #e78a53;
+    opacity: 0.7;
     transition: transform 0.2s ease;
 }
 
 .footer-nav-list a:hover {
-    color: #d4af37;
+    color: #e78a53;
     padding-left: 4px;
 }
 
@@ -1522,7 +1826,7 @@
 .footer-contact-icon {
     width: 20px;
     min-width: 20px;
-    color: #d4af37 !important;
+    color: #e78a53 !important;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -1537,14 +1841,15 @@
 }
 
 .footer-contact-item:hover .footer-contact-icon {
-    color: #f1c40f !important;
+    color: #f09a67 !important;
     transform: scale(1.15);
 }
 
 .footer-contact-text,
 .footer-contact-details p,
 .footer-contact-details span {
-    color: #e2e8f0 !important;
+    color: #c1c1c1 !important;
+    font-family: 'Outfit', sans-serif;
     font-size: 14px;
     line-height: 1.55;
     flex: 1;
@@ -1554,6 +1859,7 @@
 
 .footer-contact-link {
     color: #ffffff !important;
+    font-family: 'Outfit', sans-serif;
     font-weight: 600;
     text-decoration: none !important;
     transition: color 0.2s ease, text-shadow 0.2s ease;
@@ -1561,28 +1867,29 @@
 }
 
 .footer-contact-link:hover {
-    color: #d4af37 !important;
-    text-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+    color: #e78a53 !important;
+    text-shadow: 0 0 8px rgba(231, 138, 83, 0.4);
     text-decoration: none !important;
 }
 
 .text-gold {
-    color: #d4af37 !important;
+    color: #e78a53 !important;
 }
 
 .hover-gold:hover {
-    color: #d4af37 !important;
+    color: #e78a53 !important;
     text-decoration: none;
 }
 
 .footer-rating-pill {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(231, 138, 83, 0.3);
+    border-radius: 0.75rem;
     padding: 6px 14px;
     font-size: 12px;
     font-weight: 600;
-    color: #e2e8f0 !important;
+    color: #c1c1c1 !important;
+    font-family: 'Outfit', sans-serif;
 }
 
 /* Social Buttons */
@@ -1594,10 +1901,10 @@
 .footer-social-btn {
     width: 40px;
     height: 40px;
-    border-radius: 50%;
-    background: rgba(22, 31, 48, 0.9);
-    border: 1px solid rgba(212, 175, 55, 0.35);
-    color: #d4af37 !important;
+    border-radius: 0.75rem;
+    background: #121212;
+    border: 1px solid #222222;
+    color: #e78a53 !important;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -1608,27 +1915,29 @@
 }
 
 .footer-social-btn:hover {
-    background: #d4af37;
-    color: #0b0f19 !important;
+    background: #e78a53;
+    color: #121113 !important;
+    border-color: #e78a53;
     transform: translateY(-3px) scale(1.08);
-    box-shadow: 0 8px 18px rgba(212, 175, 55, 0.4);
+    box-shadow: 0 8px 18px rgba(231, 138, 83, 0.4);
 }
 
 /* Theme Status Box */
 .footer-theme-status {
-    background: rgba(22, 31, 48, 0.65);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 12px;
+    background: #121212;
+    border: 1px solid #222222;
+    border-radius: 0.75rem;
 }
 
 /* Bottom Bar */
 .footer-bottom-bar {
-    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-top: 1px solid #222222 !important;
 }
 
 .footer-copy-text {
+    font-family: 'Outfit', sans-serif;
     font-size: 13.5px;
-    color: #94a3b8;
+    color: #888888;
 }
 
 .footer-policy-links {
@@ -1640,14 +1949,15 @@
 }
 
 .footer-policy-links a {
-    color: #94a3b8;
+    font-family: 'Outfit', sans-serif;
+    color: #888888;
     font-size: 13px;
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
 .footer-policy-links a:hover {
-    color: #d4af37;
+    color: #e78a53;
 }
 
 @media (max-width: 767px) {

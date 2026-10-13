@@ -14,3 +14,9 @@ ehthumbs.db
 .idea/
 *.swp
 *.swo
+
+# Antigravity Global Skills & Tools Junction
+.agents/skills
+.agents/playbook
+.agents/tools
+
